@@ -133,14 +133,14 @@ const PlayTherapyLeaflet = () => {
         <span>Print Leaflet</span>
       </button>
 
-      <div className="max-w-4xl mx-auto p-6 space-y-8 bg-gradient-to-b from-white to-blue-50 print:bg-white">
+      <div className="max-w-4xl mx-auto p-6 space-y-8 bg-gradient-to-b from-white to-blue-50 print:bg-white print:m-0 print:p-0 print:max-w-none">
         {/* Decorative Header */}
-        <div className="flex justify-around mb-8">
-          <Sun className="w-8 h-8 text-yellow-400 animate-pulse print:animate-none" />
+        <div className="flex justify-around mb-8 print:hidden">
+          <Sun className="w-8 h-8 text-yellow-400 animate-pulse" />
           <Cloud className="w-8 h-8 text-blue-300" />
-          <Star className="w-8 h-8 text-yellow-400 animate-pulse print:animate-none" />
+          <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
           <Moon className="w-8 h-8 text-blue-300" />
-          <Star className="w-8 h-8 text-yellow-400 animate-pulse print:animate-none" />
+          <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
         </div>
 
         {/* Welcome Section */}
@@ -250,6 +250,20 @@ const PlayTherapyLeaflet = () => {
                   className="text-lg text-purple-700"
                 />
               </div>
+              <div className="flex items-center justify-center space-x-2 mt-4">
+                <Shield className="w-6 h-6 text-purple-600" />
+                <p className="text-lg text-purple-700">
+                  I am safe, <EditableField
+                    value={therapistName}
+                    onChange={setTherapistName}
+                    className="text-lg text-purple-700"
+                  /> is safe, and everything in the play room is safe. I'm the boss of play and <EditableField
+                    value={therapistName}
+                    onChange={setTherapistName}
+                    className="text-lg text-purple-700"
+                  /> is the boss of safety.
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -284,7 +298,22 @@ const PlayTherapyLeaflet = () => {
         {/* Print-specific styles */}
         <style>{`
           @media print {
-            /* ... existing print-specific styles ... */
+            @page { 
+              size: A4; 
+              margin: 0.5cm;
+            }
+            .print\:m-0 { 
+              margin: 0; 
+            }
+            .print\:p-0 { 
+              padding: 0; 
+            }
+            .print\:max-w-none { 
+              max-width: none; 
+            }
+            .print\:hidden { 
+              display: none; 
+            }
           }
         `}</style>
       </div>
