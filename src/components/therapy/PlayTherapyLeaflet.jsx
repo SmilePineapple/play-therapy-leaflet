@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useRef } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { 
@@ -56,11 +57,13 @@ const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
 
   return (
     <div className="relative group">
-      <img 
-        src={src.startsWith('data:') ? src : `/api/placeholder/${src}`}
-        alt={alt}
-        className={className}
-      />
+      <Image
+  src={src.startsWith('data:') ? src : `/api/placeholder/${src}`}
+  alt={alt}
+  className={className}
+  width={400} // Replace with actual width
+  height={200} // Replace with actual height
+/>
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity print:hidden">
         <div className="cursor-pointer" onClick={handleClick}>
           <Upload className="w-8 h-8 text-white mb-2" />
@@ -257,7 +260,7 @@ const PlayTherapyLeaflet = () => {
                     value={therapistName}
                     onChange={setTherapistName}
                     className="text-lg text-purple-700"
-                  /> is safe, and everything in the play room is safe. I'm the boss of play and <EditableField
+                  /> is safe, and everything in the play room is safe. I am the boss of play and <EditableField
                     value={therapistName}
                     onChange={setTherapistName}
                     className="text-lg text-purple-700"
