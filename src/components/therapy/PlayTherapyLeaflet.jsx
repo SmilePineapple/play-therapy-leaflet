@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 import React, { useState, useRef } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
@@ -52,7 +53,9 @@ const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
   };
 
 const handlePrint = () => {
-  window.print();
+  if (typeof window !== "undefined") {
+    window.print();
+  }
 };
 
   const handleClick = () => {
@@ -132,6 +135,9 @@ const [isTherapistVisible, setIsTherapistVisible] = useState(true);
 const [isSafetyVisible, setIsSafetyVisible] = useState(true);
 const [isCalendarVisible, setIsCalendarVisible] = useState(true);
 const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
+const [notes, setNotes] = useState(
+  `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
+);
 
   const deleteSection = (sectionId) => {
   switch (sectionId) {
@@ -163,11 +169,7 @@ const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
     <div>
       {/* Print Button */}
       <button
-  onClick={() => {
-    if (typeof window !== "undefined") {
-      handlePrint();
-    }
-  }}
+  onClick={handlePrint}
   className="fixed top-4 right-4 flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 print:hidden"
 >
   <Printer className="w-5 h-5" />
@@ -183,6 +185,12 @@ const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
           <Moon className="w-8 h-8 text-blue-300" />
           <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
         </div>
+
+useEffect(() => {
+  setNotes(
+    `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
+  );
+}, [childName, sessionDay]);
 
 {isWelcomeVisible && (
         <Card className="bg-sky-50 border-t-4 border-sky-400 shadow-lg print:shadow-none relative">
@@ -347,24 +355,24 @@ const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
 )}
 
 {isGeneralNotesVisible && (
-        <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg print:shadow-none relative">
-          <button
-            onClick={() => deleteSection('notes')}
-            className="absolute top-2 right-2 p-1 bg-red-500 rounded-full print:hidden"
-          >
-            <Trash className="w-4 h-4 text-white" />
-          </button>
-          <CardContent className="p-6">
-            <div className="text-center space-y-4">
-              <Smile className="w-12 h-12 mx-auto text-gray-500" />
-              <EditableField
-                value={notes}
-                onChange={setNotes}
-                className="text-lg text-gray-700"
-              />
-            </div>
-          </CardContent>
-        </Card>
+  <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg print:shadow-none relative">
+    <button
+      onClick={() => deleteSection('notes')}
+      className="absolute top-2 right-2 p-1 bg-red-500 rounded-full print:hidden"
+    >
+      <Trash className="w-4 h-4 text-white" />
+    </button>
+    <CardContent className="p-6">
+      <div className="text-center space-y-4">
+        <Smile className="w-12 h-12 mx-auto text-gray-500" />
+        <EditableField
+          value={notes}
+          onChange={setNotes}
+          className="text-lg text-gray-700"
+        />
+      </div>
+    </CardContent>
+  </Card>
 )}
 
         {/* Print-specific styles */}
