@@ -126,9 +126,38 @@ const PlayTherapyLeaflet = () => {
     }
   };
 
+const [isWelcomeVisible, setIsWelcomeVisible] = useState(true);
+const [isPlayVisible, setIsPlayVisible] = useState(true);
+const [isTherapistVisible, setIsTherapistVisible] = useState(true);
+const [isSafetyVisible, setIsSafetyVisible] = useState(true);
+const [isCalendarVisible, setIsCalendarVisible] = useState(true);
+const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
+
   const deleteSection = (sectionId) => {
-    // Implement section deletion logic here
-  };
+  switch (sectionId) {
+    case "welcome":
+      setIsWelcomeVisible(false);
+      break;
+    case "play":
+      setIsPlayVisible(false);
+      break;
+    case "therapist":
+      setIsTherapistVisible(false);
+      break;
+    case "safety":
+      setIsSafetyVisible(false);
+      break;
+    case "calendar":
+      setIsCalendarVisible(false);
+      break;
+    case "generalNotes":
+      setIsGeneralNotesVisible(false);
+      break;
+    default:
+      break;
+  }
+};
+
 
   return (
     <div>
@@ -155,7 +184,7 @@ const PlayTherapyLeaflet = () => {
           <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
         </div>
 
-        {/* Welcome Section */}
+{isWelcomeVisible && (
         <Card className="bg-sky-50 border-t-4 border-sky-400 shadow-lg print:shadow-none relative">
           <button
             onClick={() => deleteSection('welcome')}
@@ -193,8 +222,9 @@ const PlayTherapyLeaflet = () => {
             </div>
           </CardContent>
         </Card>
+)}
 
-        {/* Meeting Therapist Section */}
+{isTherapistVisible && (
         <Card className="bg-purple-50 border-t-4 border-purple-400 shadow-lg print:shadow-none relative">
           <button
             onClick={() => deleteSection('therapist')}
@@ -223,8 +253,9 @@ const PlayTherapyLeaflet = () => {
             </div>
           </CardContent>
         </Card>
+)}
 
-        {/* Play Section */}
+{isPlayVisible && (
         <Card className="bg-green-50 border-t-4 border-green-400 shadow-lg print:shadow-none relative">
           <button
             onClick={() => deleteSection('play')}
@@ -279,8 +310,9 @@ const PlayTherapyLeaflet = () => {
             </div>
           </CardContent>
         </Card>
+)}
 
-        {/* Calendar Section */}
+{isCalendarVisible && (
         <Card className="bg-amber-50 border-t-4 border-amber-400 shadow-lg print:shadow-none relative">
           <button
             onClick={() => deleteSection('calendar')}
@@ -312,8 +344,9 @@ const PlayTherapyLeaflet = () => {
             </div>
           </CardContent>
         </Card>
+)}
 
-        {/* General Notes Section */}
+{isGeneralNotesVisible && (
         <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg print:shadow-none relative">
           <button
             onClick={() => deleteSection('notes')}
@@ -332,6 +365,7 @@ const PlayTherapyLeaflet = () => {
             </div>
           </CardContent>
         </Card>
+)}
 
         {/* Print-specific styles */}
         <style>{`
