@@ -210,7 +210,7 @@ const PlayTherapyLeaflet = () => {
                 />
               </h2>
               <p className="text-xl text-purple-700">
-                '{childName}' is safe, '{therapistName}' is safe, and everything in the play room is safe. '{childName}' is the boss of play and '{therapistName}' is the boss of safety.
+                <EditableField value={childName} onChange={setChildName} className="text-lg text-purple-700" /> is safe, <EditableField value={therapistName} onChange={setTherapistName} className="text-lg text-purple-700" /> is safe, and everything in the play room is safe. <EditableField value={childName} onChange={setChildName} className="text-lg text-purple-700" /> is the boss of play and <EditableField value={therapistName} onChange={setTherapistName} className="text-lg text-purple-700" /> is the boss of safety.
               </p>
             </div>
           </CardContent>
