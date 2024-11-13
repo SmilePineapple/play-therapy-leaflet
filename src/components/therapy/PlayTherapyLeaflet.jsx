@@ -98,7 +98,8 @@ const PlayTherapyLeaflet = () => {
   const [sessionDay, setSessionDay] = useState("Wednesday");
   const [sessionTime, setSessionTime] = useState("11:30am - 12:15pm");
   const [numWeeks, setNumWeeks] = useState("12");
-  const [welcomeText, setWelcomeText] = useState("Welcome to The Lodge");
+  const [welcomeText, setWelcomeText] = useState("Welcome to The Play Room");
+  const [notes, setNotes] = useState("During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you 'clients name'. See you on 'day of week'.");
   
   const [lodgeImage, setLodgeImage] = useState("400/200");
   const [therapistImage, setTherapistImage] = useState("150/150");
@@ -119,6 +120,10 @@ const PlayTherapyLeaflet = () => {
     if (playImages.length > 1) {
       setPlayImages(playImages.filter(img => img.id !== id));
     }
+  };
+
+  const deleteSection = (sectionId) => {
+    // Implement section deletion logic here
   };
 
   const handlePrint = () => {
@@ -145,6 +150,77 @@ const PlayTherapyLeaflet = () => {
           <Moon className="w-8 h-8 text-blue-300" />
           <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
         </div>
+
+        {/* Meeting Therapist Section */}
+        <Card className="bg-purple-50 border-t-4 border-purple-400 shadow-lg print:shadow-none">
+          <CardContent className="p-6">
+            <div className="text-center space-y-4">
+              <EditableImage 
+                src={therapistImage}
+                alt="Your Play Therapist"
+                className="mx-auto rounded-full shadow-md print:shadow-none w-32 h-32 object-cover"
+                onImageChange={setTherapistImage}
+              />
+              <h2 className="text-2xl font-bold text-purple-800">
+                Hi, I am <EditableField
+                  value={therapistName}
+                  onChange={setTherapistName}
+                  className="text-2xl font-bold text-purple-800"
+                />
+              </h2>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Play Section */}
+        <Card className="bg-green-50 border-t-4 border-green-400 shadow-lg print:shadow-none">
+          <CardContent className="p-6">
+            <div className="text-center space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {playImages.map((image) => (
+                  <EditableImage 
+                    key={image.id}
+                    src={image.src}
+                    alt="Play Area"
+                    className="mx-auto rounded-lg shadow-md print:shadow-none w-full h-48 object-cover"
+                    onImageChange={(newSrc) => updatePlayImage(image.id, newSrc)}
+                    onDelete={() => deletePlayImage(image.id)}
+                  />
+                ))}
+                <button 
+                  onClick={addPlayImage}
+                  className="flex items-center justify-center p-4 border-2 border-dashed border-green-300 rounded-lg hover:bg-green-100 transition-colors print:hidden"
+                >
+                  <Plus className="w-8 h-8 text-green-500" />
+                </button>
+              </div>
+              <h2 className="text-2xl font-bold text-green-800">Time to Play!</h2>
+              <div className="flex items-center justify-center space-x-2">
+                <Clock className="w-6 h-6 text-green-600" />
+                <EditableField
+                  value={sessionTime}
+                  onChange={setSessionTime}
+                  className="text-lg text-green-700"
+                />
+              </div>
+              <p className="text-xl text-green-700">Lots of different toys to play with</p>
+              <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
+                <div className="text-center">
+                  <Palette className="w-8 h-8 mx-auto text-green-500" />
+                  <p className="text-sm text-green-600">Art & Crafts</p>
+                </div>
+                <div className="text-center">
+                  <Gamepad className="w-8 h-8 mx-auto text-green-500" />
+                  <p className="text-sm text-green-600">Games</p>
+                </div>
+                <div className="text-center">
+                  <Music2 className="w-8 h-8 mx-auto text-green-500" />
+                  <p className="text-sm text-green-600">Music</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Welcome Section */}
         <Card className="bg-sky-50 border-t-4 border-sky-400 shadow-lg print:shadow-none">
@@ -179,98 +255,6 @@ const PlayTherapyLeaflet = () => {
           </CardContent>
         </Card>
 
-        {/* Play Section */}
-        <Card className="bg-green-50 border-t-4 border-green-400 shadow-lg print:shadow-none">
-          <CardContent className="p-6">
-            <div className="text-center space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {playImages.map((image) => (
-                  <EditableImage 
-                    key={image.id}
-                    src={image.src}
-                    alt="Play Area"
-                    className="mx-auto rounded-lg shadow-md print:shadow-none w-full h-48 object-cover"
-                    onImageChange={(newSrc) => updatePlayImage(image.id, newSrc)}
-                    onDelete={() => deletePlayImage(image.id)}
-                  />
-                ))}
-                <button 
-                  onClick={addPlayImage}
-                  className="flex items-center justify-center p-4 border-2 border-dashed border-green-300 rounded-lg hover:bg-green-100 transition-colors print:hidden"
-                >
-                  <Plus className="w-8 h-8 text-green-500" />
-                </button>
-              </div>
-              <h2 className="text-2xl font-bold text-green-800">Time to Play!</h2>
-              <p className="text-xl text-green-700">Lots of different toys to play with</p>
-              <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
-                <div className="text-center">
-                  <Palette className="w-8 h-8 mx-auto text-green-500" />
-                  <p className="text-sm text-green-600">Art & Crafts</p>
-                </div>
-                <div className="text-center">
-                  <Gamepad className="w-8 h-8 mx-auto text-green-500" />
-                  <p className="text-sm text-green-600">Games</p>
-                </div>
-                <div className="text-center">
-                  <Music2 className="w-8 h-8 mx-auto text-green-500" />
-                  <p className="text-sm text-green-600">Music</p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Meeting Therapist Section */}
-        <Card className="bg-purple-50 border-t-4 border-purple-400 shadow-lg print:shadow-none">
-          <CardContent className="p-6">
-            <div className="text-center space-y-4">
-              <EditableImage 
-                src={therapistImage}
-                alt="Your Play Therapist"
-                className="mx-auto rounded-full shadow-md print:shadow-none w-32 h-32 object-cover"
-                onImageChange={setTherapistImage}
-              />
-              <h2 className="text-2xl font-bold text-purple-800">
-                See you on <EditableField
-                  value={sessionDay}
-                  onChange={setSessionDay}
-                  className="text-2xl font-bold text-purple-800"
-                />
-              </h2>
-              <p className="text-xl text-purple-700">
-                With <EditableField
-                  value={therapistName}
-                  onChange={setTherapistName}
-                  className="text-xl text-purple-700"
-                />
-              </p>
-              <div className="flex items-center justify-center space-x-2">
-                <Clock className="w-6 h-6 text-purple-600" />
-                <EditableField
-                  value={sessionTime}
-                  onChange={setSessionTime}
-                  className="text-lg text-purple-700"
-                />
-              </div>
-              <div className="flex items-center justify-center space-x-2 mt-4">
-                <Shield className="w-6 h-6 text-purple-600" />
-                <p className="text-lg text-purple-700">
-                  I am safe, <EditableField
-                    value={therapistName}
-                    onChange={setTherapistName}
-                    className="text-lg text-purple-700"
-                  /> is safe, and everything in the play room is safe. I am the boss of play and <EditableField
-                    value={therapistName}
-                    onChange={setTherapistName}
-                    className="text-lg text-purple-700"
-                  /> is the boss of safety.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Calendar Section */}
         <Card className="bg-amber-50 border-t-4 border-amber-400 shadow-lg print:shadow-none">
           <CardContent className="p-6">
@@ -294,6 +278,19 @@ const PlayTherapyLeaflet = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* General Notes Section */}
+        <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg print:shadow-none">
+          <CardContent className="p-6">
+            <div className="text-center space-y-4">
+              <EditableField
+                value={notes}
+                onChange={setNotes}
+                className="text-lg text-gray-700"
+              />
             </div>
           </CardContent>
         </Card>
