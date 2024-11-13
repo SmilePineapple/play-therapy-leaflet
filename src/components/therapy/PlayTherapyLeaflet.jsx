@@ -7,7 +7,7 @@ import {
   Clock, Calendar, Shield, Smile, UserCircle2, PlaySquare, 
   Heart, Star, Sun, Cloud, Moon, Palette, Music2, 
   Gamepad, Building2, Printer, Edit2, ImageIcon, Upload,
-  Plus, X
+  Plus, X, Trash
 } from 'lucide-react';
 
 const EditableField = ({ value, onChange, className }) => {
@@ -126,10 +126,6 @@ const PlayTherapyLeaflet = () => {
     // Implement section deletion logic here
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <div>
       {/* Print Button */}
@@ -151,8 +147,53 @@ const PlayTherapyLeaflet = () => {
           <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
         </div>
 
+        {/* Welcome Section */}
+        <Card className="bg-sky-50 border-t-4 border-sky-400 shadow-lg print:shadow-none relative">
+          <button
+            onClick={() => deleteSection('welcome')}
+            className="absolute top-2 right-2 p-1 bg-red-500 rounded-full print:hidden"
+          >
+            <Trash className="w-4 h-4 text-white" />
+          </button>
+          <CardContent className="p-6">
+            <div className="text-center space-y-4">
+              <EditableImage 
+                src={lodgeImage}
+                alt="The Lodge Building"
+                className="mx-auto rounded-lg shadow-md print:shadow-none w-full max-w-lg h-48 object-cover"
+                onImageChange={setLodgeImage}
+              />
+              <div className="flex justify-center space-x-4">
+                <Star className="w-12 h-12 text-green-600" />
+                <Building2 className="w-16 h-16 text-sky-600" />
+                <Star className="w-12 h-12 text-green-600" />
+              </div>
+              <h1 className="text-3xl font-bold text-sky-800">
+                <EditableField
+                  value={welcomeText}
+                  onChange={setWelcomeText}
+                  className="text-3xl font-bold text-sky-800"
+                />
+              </h1>
+              <h2 className="text-2xl text-sky-700">
+                <EditableField
+                  value={childName}
+                  onChange={setChildName}
+                  className="text-2xl text-sky-700 font-bold"
+                />
+              </h2>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Meeting Therapist Section */}
-        <Card className="bg-purple-50 border-t-4 border-purple-400 shadow-lg print:shadow-none">
+        <Card className="bg-purple-50 border-t-4 border-purple-400 shadow-lg print:shadow-none relative">
+          <button
+            onClick={() => deleteSection('therapist')}
+            className="absolute top-2 right-2 p-1 bg-red-500 rounded-full print:hidden"
+          >
+            <Trash className="w-4 h-4 text-white" />
+          </button>
           <CardContent className="p-6">
             <div className="text-center space-y-4">
               <EditableImage 
@@ -168,12 +209,21 @@ const PlayTherapyLeaflet = () => {
                   className="text-2xl font-bold text-purple-800"
                 />
               </h2>
+              <p className="text-xl text-purple-700">
+                '{childName}' is safe, '{therapistName}' is safe, and everything in the play room is safe. '{childName}' is the boss of play and '{therapistName}' is the boss of safety.
+              </p>
             </div>
           </CardContent>
         </Card>
 
         {/* Play Section */}
-        <Card className="bg-green-50 border-t-4 border-green-400 shadow-lg print:shadow-none">
+        <Card className="bg-green-50 border-t-4 border-green-400 shadow-lg print:shadow-none relative">
+          <button
+            onClick={() => deleteSection('play')}
+            className="absolute top-2 right-2 p-1 bg-red-500 rounded-full print:hidden"
+          >
+            <Trash className="w-4 h-4 text-white" />
+          </button>
           <CardContent className="p-6">
             <div className="text-center space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -222,41 +272,14 @@ const PlayTherapyLeaflet = () => {
           </CardContent>
         </Card>
 
-        {/* Welcome Section */}
-        <Card className="bg-sky-50 border-t-4 border-sky-400 shadow-lg print:shadow-none">
-          <CardContent className="p-6">
-            <div className="text-center space-y-4">
-              <EditableImage 
-                src={lodgeImage}
-                alt="The Lodge Building"
-                className="mx-auto rounded-lg shadow-md print:shadow-none w-full max-w-lg h-48 object-cover"
-                onImageChange={setLodgeImage}
-              />
-              <div className="flex justify-center space-x-4">
-                <Star className="w-12 h-12 text-green-600" />
-                <Building2 className="w-16 h-16 text-sky-600" />
-                <Star className="w-12 h-12 text-green-600" />
-              </div>
-              <h1 className="text-3xl font-bold text-sky-800">
-                <EditableField
-                  value={welcomeText}
-                  onChange={setWelcomeText}
-                  className="text-3xl font-bold text-sky-800"
-                />
-              </h1>
-              <h2 className="text-2xl text-sky-700">
-                <EditableField
-                  value={childName}
-                  onChange={setChildName}
-                  className="text-2xl text-sky-700 font-bold"
-                />
-              </h2>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Calendar Section */}
-        <Card className="bg-amber-50 border-t-4 border-amber-400 shadow-lg print:shadow-none">
+        <Card className="bg-amber-50 border-t-4 border-amber-400 shadow-lg print:shadow-none relative">
+          <button
+            onClick={() => deleteSection('calendar')}
+            className="absolute top-2 right-2 p-1 bg-red-500 rounded-full print:hidden"
+          >
+            <Trash className="w-4 h-4 text-white" />
+          </button>
           <CardContent className="p-6">
             <div className="text-center space-y-4">
               <Calendar className="w-12 h-12 mx-auto text-amber-600" />
@@ -283,9 +306,16 @@ const PlayTherapyLeaflet = () => {
         </Card>
 
         {/* General Notes Section */}
-        <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg print:shadow-none">
+        <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg print:shadow-none relative">
+          <button
+            onClick={() => deleteSection('notes')}
+            className="absolute top-2 right-2 p-1 bg-red-500 rounded-full print:hidden"
+          >
+            <Trash className="w-4 h-4 text-white" />
+          </button>
           <CardContent className="p-6">
             <div className="text-center space-y-4">
+              <Smile className="w-12 h-12 mx-auto text-gray-500" />
               <EditableField
                 value={notes}
                 onChange={setNotes}
@@ -313,6 +343,9 @@ const PlayTherapyLeaflet = () => {
             }
             .print\:hidden { 
               display: none; 
+            }
+            .print\:break-before-avoid { 
+              break-before: avoid; 
             }
           }
         `}</style>
