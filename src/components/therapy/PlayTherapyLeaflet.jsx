@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from 'react';
 import Image from "next/image";
 import React, { useState, useRef } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
@@ -99,6 +98,8 @@ const handlePrint = () => {
   );
 };
 
+import { useState, useEffect } from 'react';
+
 const PlayTherapyLeaflet = () => {
   const [childName, setChildName] = useState("Your Name");
   const [therapistName, setTherapistName] = useState("Jayne");
@@ -135,9 +136,10 @@ const [isTherapistVisible, setIsTherapistVisible] = useState(true);
 const [isSafetyVisible, setIsSafetyVisible] = useState(true);
 const [isCalendarVisible, setIsCalendarVisible] = useState(true);
 const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
-const [notes, setNotes] = useState(
-  `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
-);
+const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
+  const [notes, setNotes] = useState(
+    `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
+  );
 
   const deleteSection = (sectionId) => {
   switch (sectionId) {
@@ -185,12 +187,6 @@ const [notes, setNotes] = useState(
           <Moon className="w-8 h-8 text-blue-300" />
           <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
         </div>
-
-useEffect(() => {
-  setNotes(
-    `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
-  );
-}, [childName, sessionDay]);
 
 {isWelcomeVisible && (
         <Card className="bg-sky-50 border-t-4 border-sky-400 shadow-lg print:shadow-none relative">
@@ -353,6 +349,12 @@ useEffect(() => {
           </CardContent>
         </Card>
 )}
+
+ useEffect(() => {
+    setNotes(
+      `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
+    );
+  }, [childName, sessionDay]);
 
 {isGeneralNotesVisible && (
   <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg print:shadow-none relative">
