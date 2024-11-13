@@ -1,7 +1,7 @@
 "use client";
 
+import React, { useState, useEffect } from 'react';
 import Image from "next/image";
-import React, { useState, useRef } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { 
   Clock, Calendar, Shield, Smile, UserCircle2, PlaySquare, 
