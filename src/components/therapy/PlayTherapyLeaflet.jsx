@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
@@ -51,12 +51,6 @@ const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
     }
   };
 
-const handlePrint = () => {
-  if (typeof window !== "undefined") {
-    window.print();
-  }
-};
-
   const handleClick = () => {
     fileInputRef.current.click();
   };
@@ -64,12 +58,12 @@ const handlePrint = () => {
   return (
     <div className="relative group">
       <Image
-  src={src.startsWith('data:') ? src : `/api/placeholder/${src}`}
-  alt={alt}
-  className={className}
-  width={400} // Replace with actual width
-  height={200} // Replace with actual height
-/>
+        src={src.startsWith('data:') ? src : `/api/placeholder/${src}`}
+        alt={alt}
+        className={className}
+        width={400} // Replace with actual width
+        height={200} // Replace with actual height
+      />
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity print:hidden">
         <div className="cursor-pointer" onClick={handleClick}>
           <Upload className="w-8 h-8 text-white mb-2" />
@@ -131,55 +125,60 @@ const PlayTherapyLeaflet = () => {
     }
   };
 
-const [isWelcomeVisible, setIsWelcomeVisible] = useState(true);
-const [isPlayVisible, setIsPlayVisible] = useState(true);
-const [isTherapistVisible, setIsTherapistVisible] = useState(true);
-const [isSafetyVisible, setIsSafetyVisible] = useState(true);
-const [isCalendarVisible, setIsCalendarVisible] = useState(true);
-const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
-useEffect(() => {
+  const [isWelcomeVisible, setIsWelcomeVisible] = useState(true);
+  const [isPlayVisible, setIsPlayVisible] = useState(true);
+  const [isTherapistVisible, setIsTherapistVisible] = useState(true);
+  const [isSafetyVisible, setIsSafetyVisible] = useState(true);
+  const [isCalendarVisible, setIsCalendarVisible] = useState(true);
+  const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
+
+  useEffect(() => {
     setNotes(
       `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
     );
   }, [childName, sessionDay]);
 
-
   const deleteSection = (sectionId) => {
-  switch (sectionId) {
-    case "welcome":
-      setIsWelcomeVisible(false);
-      break;
-    case "play":
-      setIsPlayVisible(false);
-      break;
-    case "therapist":
-      setIsTherapistVisible(false);
-      break;
-    case "safety":
-      setIsSafetyVisible(false);
-      break;
-    case "calendar":
-      setIsCalendarVisible(false);
-      break;
-    case "generalNotes":
-      setIsGeneralNotesVisible(false);
-      break;
-    default:
-      break;
-  }
-};
+    switch (sectionId) {
+      case "welcome":
+        setIsWelcomeVisible(false);
+        break;
+      case "play":
+        setIsPlayVisible(false);
+        break;
+      case "therapist":
+        setIsTherapistVisible(false);
+        break;
+      case "safety":
+        setIsSafetyVisible(false);
+        break;
+      case "calendar":
+        setIsCalendarVisible(false);
+        break;
+      case "generalNotes":
+        setIsGeneralNotesVisible(false);
+        break;
+      default:
+        break;
+    }
+  };
 
+  const handlePrint = () => {
+    if (typeof window !== "undefined") {
+      window.print();
+    }
+  };
 
   return (
     <div>
       {/* Print Button */}
       <button
-  onClick={handlePrint}
-  className="fixed top-4 right-4 flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 print:hidden"
->
-  <Printer className="w-5 h-5" />
-  <span>Print Leaflet</span>
-</button>
+        onClick={handlePrint}
+        className="fixed top-4 right-4 flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 print:hidden"
+      >
+        <Printer className="w-5 h-5" />
+        <span>Print Leaflet</span>
+      </button>
 
       <div className="max-w-4xl mx-auto p-6 space-y-8 bg-gradient-to-b from-white to-blue-50 print:bg-white print:m-0 print:p-0 print:max-w-none">
         {/* Decorative Header */}
