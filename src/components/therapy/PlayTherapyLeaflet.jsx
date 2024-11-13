@@ -98,17 +98,15 @@ const handlePrint = () => {
   );
 };
 
-import { useState, useEffect } from 'react';
-
 const PlayTherapyLeaflet = () => {
-  const [childName, setChildName] = useState("Your Name");
-  const [therapistName, setTherapistName] = useState("Jayne");
-  const [sessionDay, setSessionDay] = useState("Wednesday");
-  const [sessionTime, setSessionTime] = useState("11:30am - 12:15pm");
-  const [numWeeks, setNumWeeks] = useState("12");
-  const [welcomeText, setWelcomeText] = useState("Welcome to The Play Room");
+  const [childName, setChildName] = React.useState("Your Name");
+  const [therapistName, setTherapistName] = React.useState("Pam");
+  const [sessionDay, setSessionDay] = React.useState("Wednesday");
+  const [sessionTime, setSessionTime] = React.useState("11:30am - 12:15pm");
+  const [numWeeks, setNumWeeks] = React.useState("12");
+  const [welcomeText, setWelcomeText] = React.useState("Welcome to The Play Room");
 
-  const [notes, setNotes] = useState(
+  const [notes, setNotes] = React.useState(
     `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
   );
   
@@ -206,7 +204,7 @@ useEffect(() => {
             <div className="text-center space-y-4">
               <EditableImage 
                 src={lodgeImage}
-                alt="The Lodge Building"
+                alt="The Play Room"
                 className="mx-auto rounded-lg shadow-md print:shadow-none w-full max-w-lg h-48 object-cover"
                 onImageChange={setLodgeImage}
               />
