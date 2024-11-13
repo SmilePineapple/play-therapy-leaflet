@@ -107,7 +107,10 @@ const PlayTherapyLeaflet = () => {
   const [sessionTime, setSessionTime] = useState("11:30am - 12:15pm");
   const [numWeeks, setNumWeeks] = useState("12");
   const [welcomeText, setWelcomeText] = useState("Welcome to The Play Room");
-  const [notes, setNotes] = useState("During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you 'clients name'. See you on 'day of week'.");
+
+  const [notes, setNotes] = useState(
+    `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
+  );
   
   const [lodgeImage, setLodgeImage] = useState("400/200");
   const [therapistImage, setTherapistImage] = useState("150/150");
@@ -137,9 +140,12 @@ const [isSafetyVisible, setIsSafetyVisible] = useState(true);
 const [isCalendarVisible, setIsCalendarVisible] = useState(true);
 const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
 const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
-  const [notes, setNotes] = useState(
-    `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
-  );
+useEffect(() => {
+    setNotes(
+      `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
+    );
+  }, [childName, sessionDay]);
+
 
   const deleteSection = (sectionId) => {
   switch (sectionId) {
@@ -349,12 +355,6 @@ const [isGeneralNotesVisible, setIsGeneralNotesVisible] = useState(true);
           </CardContent>
         </Card>
 )}
-
- useEffect(() => {
-    setNotes(
-      `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
-    );
-  }, [childName, sessionDay]);
 
 {isGeneralNotesVisible && (
   <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg print:shadow-none relative">
