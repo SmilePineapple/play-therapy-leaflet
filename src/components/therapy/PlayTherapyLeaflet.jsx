@@ -151,6 +151,39 @@ const PlayTherapyLeaflet = () => {
           <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
         </div>
 
+{/* Welcome Section */}
+        <Card className="bg-sky-50 border-t-4 border-sky-400 shadow-lg print:shadow-none">
+          <CardContent className="p-6">
+            <div className="text-center space-y-4">
+              <EditableImage 
+                src={lodgeImage}
+                alt="The Lodge Building"
+                className="mx-auto rounded-lg shadow-md print:shadow-none w-full max-w-lg h-48 object-cover"
+                onImageChange={setLodgeImage}
+              />
+              <div className="flex justify-center space-x-4">
+                <Star className="w-12 h-12 text-green-600" />
+                <Building2 className="w-16 h-16 text-sky-600" />
+                <Star className="w-12 h-12 text-green-600" />
+              </div>
+              <h1 className="text-3xl font-bold text-sky-800">
+                <EditableField
+                  value={welcomeText}
+                  onChange={setWelcomeText}
+                  className="text-3xl font-bold text-sky-800"
+                />
+              </h1>
+              <h2 className="text-2xl text-sky-700">
+                <EditableField
+                  value={childName}
+                  onChange={setChildName}
+                  className="text-2xl text-sky-700 font-bold"
+                />
+              </h2>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Meeting Therapist Section */}
         <Card className="bg-purple-50 border-t-4 border-purple-400 shadow-lg print:shadow-none">
           <CardContent className="p-6">
@@ -218,39 +251,6 @@ const PlayTherapyLeaflet = () => {
                   <p className="text-sm text-green-600">Music</p>
                 </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Welcome Section */}
-        <Card className="bg-sky-50 border-t-4 border-sky-400 shadow-lg print:shadow-none">
-          <CardContent className="p-6">
-            <div className="text-center space-y-4">
-              <EditableImage 
-                src={lodgeImage}
-                alt="The Lodge Building"
-                className="mx-auto rounded-lg shadow-md print:shadow-none w-full max-w-lg h-48 object-cover"
-                onImageChange={setLodgeImage}
-              />
-              <div className="flex justify-center space-x-4">
-                <Star className="w-12 h-12 text-green-600" />
-                <Building2 className="w-16 h-16 text-sky-600" />
-                <Star className="w-12 h-12 text-green-600" />
-              </div>
-              <h1 className="text-3xl font-bold text-sky-800">
-                <EditableField
-                  value={welcomeText}
-                  onChange={setWelcomeText}
-                  className="text-3xl font-bold text-sky-800"
-                />
-              </h1>
-              <h2 className="text-2xl text-sky-700">
-                <EditableField
-                  value={childName}
-                  onChange={setChildName}
-                  className="text-2xl text-sky-700 font-bold"
-                />
-              </h2>
             </div>
           </CardContent>
         </Card>
