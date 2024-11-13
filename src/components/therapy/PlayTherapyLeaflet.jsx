@@ -319,7 +319,7 @@ const PlayTherapyLeaflet = () => {
 )}
 
 {isCalendarVisible && (
-        <Card className="bg-amber-50 border-t-4 border-amber-400 shadow-lg print:shadow-none relative print:break-before-avoid">
+        <Card className="bg-amber-50 border-t-4 border-amber-400 shadow-lg print:shadow-none relative">
           <button
             onClick={() => deleteSection('calendar')}
             className="absolute top-2 right-2 p-1 bg-red-500 rounded-full print:hidden"
@@ -353,7 +353,7 @@ const PlayTherapyLeaflet = () => {
 )}
 
 {isGeneralNotesVisible && (
-  <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg print:shadow-none relative print:break-before-avoid">
+  <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg print:shadow-none relative">
     <button
       onClick={() => deleteSection('notes')}
       className="absolute top-2 right-2 p-1 bg-red-500 rounded-full print:hidden"
