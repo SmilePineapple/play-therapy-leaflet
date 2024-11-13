@@ -51,6 +51,10 @@ const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
     }
   };
 
+const handlePrint = () => {
+  window.print();
+};
+
   const handleClick = () => {
     fileInputRef.current.click();
   };
@@ -130,12 +134,16 @@ const PlayTherapyLeaflet = () => {
     <div>
       {/* Print Button */}
       <button
-        onClick={handlePrint}
-        className="fixed top-4 right-4 flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 print:hidden"
-      >
-        <Printer className="w-5 h-5" />
-        <span>Print Leaflet</span>
-      </button>
+  onClick={() => {
+    if (typeof window !== "undefined") {
+      handlePrint();
+    }
+  }}
+  className="fixed top-4 right-4 flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 print:hidden"
+>
+  <Printer className="w-5 h-5" />
+  <span>Print Leaflet</span>
+</button>
 
       <div className="max-w-4xl mx-auto p-6 space-y-8 bg-gradient-to-b from-white to-blue-50 print:bg-white print:m-0 print:p-0 print:max-w-none">
         {/* Decorative Header */}
