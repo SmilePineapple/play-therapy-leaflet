@@ -4,9 +4,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  Clock, Calendar, Shield, Smile, UserCircle2, PlaySquare,
-  Heart, Star, Sun, Cloud, Moon, Palette, Music2,
-  Gamepad, Building2, Printer, Edit2, Upload, Plus, X, Trash
+  Clock, Calendar, Smile, Upload, Plus, Trash,
+  Star, Building2, Printer, Edit2, Palette, Gamepad, Music2
 } from "lucide-react";
 
 const EditableField = ({ value, onChange, className }) => {
@@ -61,7 +60,7 @@ const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
         alt={alt}
         className={className}
         width={400}
-        height={250} // Adjust image height
+        height={250}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity print:hidden">
         <div className="cursor-pointer" onClick={handleClick}>
@@ -76,7 +75,7 @@ const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
             }}
             className="absolute top-2 right-2 p-1 bg-red-500 rounded-full"
           >
-            <X className="w-4 h-4 text-white" />
+            <Trash className="w-4 h-4 text-white" />
           </button>
         )}
       </div>
@@ -114,13 +113,13 @@ const PlayTherapyLeaflet = () => {
       {/* Print Button */}
       <button
         onClick={handlePrint}
-        className="fixed top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded-lg print:hidden"
+        className="fixed top-4 right-4 flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 print:hidden"
       >
         <Printer className="w-5 h-5" />
         <span>Print Leaflet</span>
       </button>
 
-      <div className="max-w-4xl mx-auto p-6 space-y-8 bg-gradient-to-b from-white to-blue-50 print:bg-white">
+      <div className="max-w-4xl mx-auto p-6 space-y-8 bg-gradient-to-b from-white to-blue-50 print:bg-white print:m-0 print:p-0 print:max-w-none">
         {/* Page 1 */}
         <div className="print:page-break-after">
           {/* Welcome Section */}
