@@ -61,7 +61,7 @@ const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
         alt={alt}
         className={className}
         width={400}
-        height={250} // Adjust image height here
+        height={250} // Adjust image height
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity print:hidden">
         <div className="cursor-pointer" onClick={handleClick}>
@@ -103,37 +103,6 @@ const PlayTherapyLeaflet = () => {
     `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
   );
 
-  const [lodgeImage, setLodgeImage] = useState("400/200");
-  const [therapistImage, setTherapistImage] = useState("150/150");
-  const [playImages, setPlayImages] = useState([{ id: 1, src: "400/250" }]);
-
-  const addPlayImage = () => {
-    const newId = Math.max(...playImages.map((img) => img.id), 0) + 1;
-    setPlayImages([...playImages, { id: newId, src: "400/250" }]);
-  };
-
-  const deleteSection = (sectionId) => {
-    switch (sectionId) {
-      case "welcome":
-        setIsWelcomeVisible(false);
-        break;
-      case "therapist":
-        setIsTherapistVisible(false);
-        break;
-      case "play":
-        setIsPlayVisible(false);
-        break;
-      case "calendar":
-        setIsCalendarVisible(false);
-        break;
-      case "notes":
-        setIsNotesVisible(false);
-        break;
-      default:
-        break;
-    }
-  };
-
   const handlePrint = () => {
     if (typeof window !== "undefined") {
       window.print();
@@ -142,6 +111,7 @@ const PlayTherapyLeaflet = () => {
 
   return (
     <div>
+      {/* Print Button */}
       <button
         onClick={handlePrint}
         className="fixed top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded-lg print:hidden"
@@ -151,26 +121,45 @@ const PlayTherapyLeaflet = () => {
       </button>
 
       <div className="max-w-4xl mx-auto p-6 space-y-8 bg-gradient-to-b from-white to-blue-50 print:bg-white">
-        <Card className="print:break-before-avoid">
-          <h1>Welcome</h1>
-        </Card>
+        {/* Page 1 */}
+        <div className="print:page-break-after">
+          <Card className="bg-sky-50 border-t-4 border-sky-400 shadow-lg relative">
+            <CardContent className="p-6">
+              <h1>{welcomeText}</h1>
+            </CardContent>
+          </Card>
 
-        <Card className="print:break-before-page">
-          <h1>Other Sections Fit Here</h1>
-        </Card>
+          <Card className="bg-purple-50 border-t-4 border-purple-400 shadow-lg relative">
+            <CardContent className="p-6">
+              <h2>Therapist Section</h2>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Page 2 */}
+        <div>
+          <Card className="bg-green-50 border-t-4 border-green-400 shadow-lg relative">
+            <CardContent className="p-6">
+              <h2>Time to Play</h2>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg relative">
+            <CardContent className="p-6">
+              <h2>General Notes</h2>
+            </CardContent>
+          </Card>
+        </div>
       </div>
 
       <style>{`
         @media print {
-          @page { 
-            size: A4; 
-            margin: 1cm; 
+          @page {
+            size: A4;
+            margin: 1cm;
           }
-          .print\:break-before-avoid { 
-            break-before: avoid;
-          }
-          .print\:break-before-page { 
-            break-before: page; 
+          .print\\:page-break-after {
+            page-break-after: always;
           }
         }
       `}</style>
