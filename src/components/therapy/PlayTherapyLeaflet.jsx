@@ -62,7 +62,7 @@ const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
         alt={alt}
         className={className}
         width={400} // Replace with actual width
-        height={300} // Replace with actual height
+        height={400} // Replace with actual height
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity print:hidden">
         <div className="cursor-pointer" onClick={handleClick}>
