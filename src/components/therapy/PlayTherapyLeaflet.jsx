@@ -123,30 +123,65 @@ const PlayTherapyLeaflet = () => {
       <div className="max-w-4xl mx-auto p-6 space-y-8 bg-gradient-to-b from-white to-blue-50 print:bg-white">
         {/* Page 1 */}
         <div className="print:page-break-after">
+          {/* Welcome Section */}
           <Card className="bg-sky-50 border-t-4 border-sky-400 shadow-lg relative">
             <CardContent className="p-6">
-              <h1>{welcomeText}</h1>
+              <EditableImage
+                src={"400/250"}
+                alt="The Play Room"
+                className="rounded-lg"
+                onImageChange={() => {}}
+              />
+              <EditableField
+                value={welcomeText}
+                onChange={setWelcomeText}
+                className="text-3xl font-bold text-sky-800"
+              />
             </CardContent>
           </Card>
 
+          {/* Therapist Section */}
           <Card className="bg-purple-50 border-t-4 border-purple-400 shadow-lg relative">
             <CardContent className="p-6">
-              <h2>Therapist Section</h2>
+              <EditableImage
+                src={"150/150"}
+                alt="Therapist"
+                className="rounded-full"
+                onImageChange={() => {}}
+              />
+              <EditableField
+                value={therapistName}
+                onChange={setTherapistName}
+                className="text-2xl font-bold text-purple-800"
+              />
             </CardContent>
           </Card>
         </div>
 
         {/* Page 2 */}
         <div>
+          {/* Time to Play Section */}
           <Card className="bg-green-50 border-t-4 border-green-400 shadow-lg relative">
             <CardContent className="p-6">
-              <h2>Time to Play</h2>
+              <h2>Time to Play!</h2>
             </CardContent>
           </Card>
 
+          {/* Calendar Section */}
+          <Card className="bg-amber-50 border-t-4 border-amber-400 shadow-lg relative">
+            <CardContent className="p-6">
+              <h2>Calendar</h2>
+            </CardContent>
+          </Card>
+
+          {/* General Notes Section */}
           <Card className="bg-gray-50 border-t-4 border-gray-400 shadow-lg relative">
             <CardContent className="p-6">
-              <h2>General Notes</h2>
+              <EditableField
+                value={notes}
+                onChange={setNotes}
+                className="text-lg text-gray-700"
+              />
             </CardContent>
           </Card>
         </div>
