@@ -12,7 +12,7 @@ import {
 
 const EditableField = ({ value, onChange, className }) => {
   const [isEditing, setIsEditing] = useState(false);
-  
+
   if (isEditing) {
     return (
       <input
@@ -20,14 +20,14 @@ const EditableField = ({ value, onChange, className }) => {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onBlur={() => setIsEditing(false)}
-        className={border-b-2 border-blue-300 bg-transparent focus:outline-none text-center ${className}}
+        className={`border-b-2 border-blue-300 bg-transparent focus:outline-none text-center ${className}`}
         autoFocus
       />
     );
   }
-  
+
   return (
-    <div 
+    <div
       onClick={() => setIsEditing(true)}
       className="cursor-pointer group relative inline-block"
     >
@@ -36,6 +36,7 @@ const EditableField = ({ value, onChange, className }) => {
     </div>
   );
 };
+
 
 const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
   const fileInputRef = useRef(null);
