@@ -376,29 +376,30 @@ const PlayTherapyLeaflet = () => {
 )}
 
         {/* Print-specific styles */}
-        <style>{
-          @media print {
-            @page { 
-              size: A4; 
-              margin: 0.5cm;
-            }
-            .print\:m-0 { 
-              margin: 0; 
-            }
-            .print\:p-0 { 
-              padding: 0; 
-            }
-            .print\:max-w-none { 
-              max-width: none; 
-            }
-            .print\:hidden { 
-              display: none; 
-            }
-            .print\:break-before-avoid { 
-              break-before: avoid; 
-            }
-          }
-        }</style>
+        <style>{`
+  @media print {
+    @page { 
+      size: A4; 
+      margin: 0.5cm;
+    }
+    .print\\:m-0 { 
+      margin: 0; 
+    }
+    .print\\:p-0 { 
+      padding: 0; 
+    }
+    .print\\:max-w-none { 
+      max-width: none; 
+    }
+    .print\\:hidden { 
+      display: none; 
+    }
+    .print\\:break-before-avoid { 
+      break-before: avoid; 
+    }
+  }
+`}</style>
+
       </div>
     </div>
   );
