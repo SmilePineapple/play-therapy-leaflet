@@ -20,7 +20,7 @@ const EditableField = ({ value, onChange, className }) => {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onBlur={() => setIsEditing(false)}
-        className={border-b-2 border-blue-300 bg-transparent focus:outline-none text-center ${className}}
+className={`border-b-2 border-blue-300 bg-transparent focus:outline-none text-center ${className}`}
         autoFocus
       />
     );
