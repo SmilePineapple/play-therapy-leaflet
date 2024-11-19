@@ -59,12 +59,12 @@ const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
   return (
     <div className="relative group">
       <Image
-  src={src.startsWith('data:') ? src : /api/placeholder/${src}}
-  alt={alt}
-  className={className}
-  width={400} // Replace with actual width
-  height={200} // Replace with actual height
-/>
+        src={src.startsWith('data:') ? src : `/api/placeholder/${src}`}
+        alt={alt}
+        className={className}
+        width={400} // Replace with actual width
+        height={200} // Replace with actual height
+      />
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity print:hidden">
         <div className="cursor-pointer" onClick={handleClick}>
           <Upload className="w-8 h-8 text-white mb-2" />
@@ -92,6 +92,7 @@ const EditableImage = ({ src, alt, className, onImageChange, onDelete }) => {
     </div>
   );
 };
+
 
 const PlayTherapyLeaflet = () => {
   const [childName, setChildName] = React.useState("Your Name");
