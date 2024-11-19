@@ -137,7 +137,7 @@ const PlayTherapyLeaflet = () => {
 
   useEffect(() => {
   setNotes(
-    During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.
+    `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
   );
 }, [childName, sessionDay]);
 
