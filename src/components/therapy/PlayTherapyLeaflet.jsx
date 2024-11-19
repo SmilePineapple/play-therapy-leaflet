@@ -103,8 +103,9 @@ const PlayTherapyLeaflet = () => {
   const [welcomeText, setWelcomeText] = React.useState("Welcome to The Play Room");
 
   const [notes, setNotes] = React.useState(
-  During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.
+  `During our play session together, I will be hoping to learn all I can about you. All you need to do is play. I want to help and support the important adults in your life. I really look forward to meeting you ${childName}. See you on ${sessionDay}.`
 );
+
   
   const [lodgeImage, setLodgeImage] = useState("400/200");
   const [therapistImage, setTherapistImage] = useState("250/250");
