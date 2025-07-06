@@ -1,7 +1,7 @@
 // Data module exports
-import mockSessions from './mockSessions.js';
+import mockSessionsData from './mockSessions.js';
 
-console.log('🔧 Debug - index.js loaded, mockSessions length:', mockSessions?.length || 'undefined');
+console.log('🔧 Debug - index.js loaded, mockSessions length:', mockSessionsData?.length || 'undefined');
 
-export { mockSessions };
-export default mockSessions;
+export { mockSessionsData as mockSessions };
+export default mockSessionsData;
