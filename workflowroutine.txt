@@ -152,14 +152,23 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
 - **RESULT** ❌ - Still failed with "Module not found: Error: Can't resolve '../data'"
 
-### 2025-01-07 - Vercel Deployment Fix Attempt #16 ✅
+### 2025-01-07 - Vercel Deployment Fix Attempt #16 ❌
 - **ISSUE** ❌ - Fifteenth attempt still failed with module resolution error for '../data'
 - **ROOT CAUSE** ℹ️ - Vercel can't resolve '../data' import path without explicit index file reference
 - **ACTIONS TAKEN** 🔧 - Changed import in Programme.js from '../data' to '../data/index'
 - **PATH EXPLICIT** ✨ - Changed import in SessionDetail.js from '../data' to '../data/index'
 - **BUILD VERIFICATION** ✅ - Verified local build works with explicit index paths
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
-- **EXPECTED RESULTS** 📋 - Explicit index file path should resolve on Vercel
+- **RESULT** ❌ - Still failed with "Module not found: Error: Can't resolve '../data/index'"
+
+### 2025-01-07 - Vercel Deployment Fix Attempt #17 ✅
+- **ISSUE** ❌ - Sixteenth attempt still failed with module resolution error for '../data/index'
+- **ROOT CAUSE** ℹ️ - Vercel's build environment may require explicit .js extensions for ES modules
+- **ACTIONS TAKEN** 🔧 - Added explicit .js extensions to import paths: '../data/index.js'
+- **PATH EXTENSIONS** ✨ - Updated both Programme.js and SessionDetail.js with .js extensions
+- **BUILD VERIFICATION** ✅ - Verified local build works with explicit .js extensions
+- **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
+- **EXPECTED RESULTS** 📋 - Explicit file extensions should resolve module resolution issues on Vercel
 
 ### 2025-01-06 - Vercel Deployment Fix Attempt #6 ✅
 - **ISSUE** ❌ - Vercel deployment failing with "Cannot find module '/vercel/path0/scripts/vercel-build.js'"
