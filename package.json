@@ -2,6 +2,7 @@
   "name": "communication-matters-conference",
   "version": "1.0.0",
   "description": "Accessible web app for Communication Matters AAC Conference",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@supabase/supabase-js": "^2.38.4",
