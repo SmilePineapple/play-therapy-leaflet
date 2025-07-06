@@ -28,10 +28,10 @@ playwright.config.ui.js
 # Large data files
 data/
 
-# Screenshots
-*.png
-*.jpg
-*.jpeg
+# Screenshots (exclude only root level screenshots, not public assets)
+/*.png
+/*.jpg
+/*.jpeg
 
 # Scripts directory (if not needed for build)
 scripts/
