@@ -24,4 +24,5 @@ const transformedSessions = parsedSessionsData.map(session => {
 });
 
 
+export default transformedSessions;
 export const mockSessions = transformedSessions;
