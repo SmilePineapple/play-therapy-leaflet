@@ -143,14 +143,23 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
 - **RESULT** ❌ - Still failed with "Module not found: Error: Can't resolve '../data'"
 
-### 2025-01-07 - Vercel Deployment Fix Attempt #15 ✅
+### 2025-01-07 - Vercel Deployment Fix Attempt #15 ❌
 - **ISSUE** ❌ - Fourteenth attempt still failed with module resolution error for '../data'
 - **ROOT CAUSE** ℹ️ - Module resolution failing due to .js extensions in import statements
 - **ACTIONS TAKEN** 🔧 - Removed .js extension from import in src/data/index.js (./mockSessions.js → ./mockSessions)
 - **EXTENSION REMOVAL** ✨ - Removed .js extension from import in src/data/mockSessions.js (./parsed-sessions.js → ./parsed-sessions)
 - **BUILD VERIFICATION** ✅ - Verified local build works without .js extensions
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
-- **EXPECTED RESULTS** 📋 - Vercel should resolve modules without .js extensions
+- **RESULT** ❌ - Still failed with "Module not found: Error: Can't resolve '../data'"
+
+### 2025-01-07 - Vercel Deployment Fix Attempt #16 ✅
+- **ISSUE** ❌ - Fifteenth attempt still failed with module resolution error for '../data'
+- **ROOT CAUSE** ℹ️ - Vercel can't resolve '../data' import path without explicit index file reference
+- **ACTIONS TAKEN** 🔧 - Changed import in Programme.js from '../data' to '../data/index'
+- **PATH EXPLICIT** ✨ - Changed import in SessionDetail.js from '../data' to '../data/index'
+- **BUILD VERIFICATION** ✅ - Verified local build works with explicit index paths
+- **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
+- **EXPECTED RESULTS** 📋 - Explicit index file path should resolve on Vercel
 
 ### 2025-01-06 - Vercel Deployment Fix Attempt #6 ✅
 - **ISSUE** ❌ - Vercel deployment failing with "Cannot find module '/vercel/path0/scripts/vercel-build.js'"
