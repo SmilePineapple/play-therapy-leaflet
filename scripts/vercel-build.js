@@ -9,9 +9,17 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const projectRoot = path.join(__dirname, '..');
+// Use process.cwd() for Vercel compatibility
+const projectRoot = process.cwd();
 const publicDir = path.join(projectRoot, 'public');
 const buildDir = path.join(projectRoot, 'build');
+
+// Debug: Log paths for troubleshooting
+console.log(`🔧 Debug - Script location: ${__dirname}`);
+console.log(`🔧 Debug - Working directory: ${process.cwd()}`);
+console.log(`🔧 Debug - Project root: ${projectRoot}`);
+console.log(`🔧 Debug - Public dir: ${publicDir}`);
+console.log(`🔧 Debug - Build dir: ${buildDir}`);
 
 // Colors for console output
 const colors = {
@@ -30,8 +38,17 @@ function log(message, color = 'reset') {
 function verifyPublicFolder() {
   log('🔍 Verifying public folder structure...', 'cyan');
   
+  // List current directory contents for debugging
+  try {
+    const currentDirContents = fs.readdirSync(projectRoot);
+    log(`📁 Current directory contents: ${currentDirContents.join(', ')}`, 'yellow');
+  } catch (error) {
+    log(`❌ Error reading current directory: ${error.message}`, 'red');
+  }
+  
   if (!fs.existsSync(publicDir)) {
     log('❌ Public directory not found!', 'red');
+    log(`❌ Looked for public directory at: ${publicDir}`, 'red');
     process.exit(1);
   }
   
