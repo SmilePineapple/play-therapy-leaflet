@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAccessibility } from '../contexts/AccessibilityContext';
 import { dbHelpers } from '../lib/supabase';
 import { trackBookmarkAdd, trackBookmarkRemove } from '../utils/analytics';
-import { mockSessions } from '../data';
+import { mockSessions } from '../data/index';
 
 const Programme = () => {
   const { announce, focusFirstHeading } = useAccessibility();

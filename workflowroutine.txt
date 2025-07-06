@@ -134,14 +134,23 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
 - **RESULT** ❌ - Vercel doesn't support jsconfig.json baseUrl for absolute imports
 
-### 2025-01-07 - Vercel Deployment Fix Attempt #14 ✅
+### 2025-01-07 - Vercel Deployment Fix Attempt #14 ❌
 - **ISSUE** ❌ - Thirteenth attempt failed with jsconfig.json absolute import configuration
 - **ROOT CAUSE** ℹ️ - Vercel's build environment doesn't properly support jsconfig.json baseUrl configuration
 - **ACTIONS TAKEN** 🔧 - Reverted back to relative imports '../data' in Programme.js and SessionDetail.js
 - **JSCONFIG REMOVED** ✨ - Removed jsconfig.json file that was causing conflicts
 - **BUILD VERIFICATION** ✅ - Verified local build works with relative imports
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
-- **EXPECTED RESULTS** 📋 - Relative imports should work since files definitely exist in correct locations
+- **RESULT** ❌ - Still failed with "Module not found: Error: Can't resolve '../data'"
+
+### 2025-01-07 - Vercel Deployment Fix Attempt #15 ✅
+- **ISSUE** ❌ - Fourteenth attempt still failed with module resolution error for '../data'
+- **ROOT CAUSE** ℹ️ - Module resolution failing due to .js extensions in import statements
+- **ACTIONS TAKEN** 🔧 - Removed .js extension from import in src/data/index.js (./mockSessions.js → ./mockSessions)
+- **EXTENSION REMOVAL** ✨ - Removed .js extension from import in src/data/mockSessions.js (./parsed-sessions.js → ./parsed-sessions)
+- **BUILD VERIFICATION** ✅ - Verified local build works without .js extensions
+- **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
+- **EXPECTED RESULTS** 📋 - Vercel should resolve modules without .js extensions
 
 ### 2025-01-06 - Vercel Deployment Fix Attempt #6 ✅
 - **ISSUE** ❌ - Vercel deployment failing with "Cannot find module '/vercel/path0/scripts/vercel-build.js'"
