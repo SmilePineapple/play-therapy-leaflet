@@ -33,8 +33,9 @@ data/
 /*.jpg
 /*.jpeg
 
-# Scripts directory (if not needed for build)
-scripts/
+# Scripts directory (exclude most scripts but keep vercel-build.js)
+scripts/*
+!scripts/vercel-build.js
 
 # SQL directory
 sql/
