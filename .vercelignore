@@ -1,0 +1,63 @@
+# Vercel ignore file
+# Exclude large files and directories that aren't needed for deployment
+
+# Test files and reports
+playwright-report/
+test-results/
+tests/
+
+# Documentation files
+*.md
+*.pdf
+
+# SQL files
+*.sql
+
+# Backup files
+backup/
+*.backup
+*.bak
+*.orig
+
+# Development files
+.eslintrc.js
+.prettierrc
+playwright.config.js
+playwright.config.ui.js
+
+# Large data files
+data/
+
+# Screenshots
+*.png
+*.jpg
+*.jpeg
+
+# Scripts directory (if not needed for build)
+scripts/
+
+# SQL directory
+sql/
+
+# Node modules (should be excluded anyway)
+node_modules/
+
+# Environment files
+.env*
+
+# Editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Package lock duplicates
+package-lock 2.json
+
+# Workflow routine
+workflowroutine.txt

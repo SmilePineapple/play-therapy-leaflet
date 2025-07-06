@@ -1,0 +1,20 @@
+{"version":8,"type":"context-options","origin":"testRunner","browserName":"","options":{},"platform":"darwin","wallTime":1751641759062,"monotonicTime":108242.951,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":108244.268,"class":"Test","method":"step","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","stepId":"hook@2","parentId":"hook@1","startTime":108244.9,"class":"Test","method":"step","title":"beforeEach hook","params":{},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":4,"column":8}]}
+{"type":"before","callId":"fixture@3","stepId":"fixture@3","parentId":"hook@2","startTime":108246.92,"class":"Test","method":"step","title":"Fixture \"browser\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@4","stepId":"pw:api@4","parentId":"fixture@3","startTime":108249.014,"class":"Test","method":"step","title":"Launch browser","params":{"handleSIGINT":"false","tracesDir":"/Users/jacobdale-rourke/Desktop/Communication Matters/test-results/.playwright-artifacts-57/traces","headless":"true","ignoreDefaultArgs":"undefined","ignoreAllDefaultArgs":"false","env":"undefined","timeout":"180000"},"stack":[]}
+{"type":"after","callId":"pw:api@4","endTime":108321.258,"annotations":[]}
+{"type":"after","callId":"fixture@3","endTime":108321.539,"annotations":[]}
+{"type":"before","callId":"fixture@5","stepId":"fixture@5","parentId":"hook@2","startTime":108323.238,"class":"Test","method":"step","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@6","stepId":"pw:api@6","parentId":"fixture@5","startTime":108324.076,"class":"Test","method":"step","title":"Create context","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","deviceScaleFactor":"1","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.23 Safari/537.36","viewport":"Object","baseURL":"http://localhost:3000","serviceWorkers":"allow","recordVideo":"Object","selectorEngines":"[]","testIdAttributeName":"data-testid","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","reducedMotion":"undefined","forcedColors":"undefined","contrast":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@6","endTime":108328.097,"annotations":[]}
+{"type":"after","callId":"fixture@5","endTime":108332.492,"annotations":[]}
+{"type":"before","callId":"fixture@7","stepId":"fixture@7","parentId":"hook@2","startTime":108333.188,"class":"Test","method":"step","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@8","stepId":"pw:api@8","parentId":"fixture@7","startTime":108335.417,"class":"Test","method":"step","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@8","endTime":108387.646,"annotations":[]}
+{"type":"after","callId":"fixture@7","endTime":108387.803,"annotations":[]}
+{"type":"before","callId":"pw:api@9","stepId":"pw:api@9","parentId":"hook@2","startTime":108389.93,"class":"Test","method":"step","title":"Navigate to \"/news\"","params":{"url":"/news","waitUntil":"load","timeout":"30000"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":5,"column":16}]}
+{"type":"after","callId":"pw:api@9","endTime":108590.232,"annotations":[]}
+{"type":"after","callId":"hook@2","endTime":108590.408,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":108591.227,"annotations":[]}
+{"type":"before","callId":"pw:api@10","stepId":"pw:api@10","startTime":108595.534,"class":"Test","method":"step","title":"Click locator('button[data-filter=\"unread\"]')","params":{"selector":"button[data-filter=\"unread\"]","timeout":"10000"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":40,"column":16}]}

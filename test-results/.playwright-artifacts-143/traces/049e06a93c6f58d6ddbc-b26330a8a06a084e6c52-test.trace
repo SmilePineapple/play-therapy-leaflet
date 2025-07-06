@@ -1,0 +1,25 @@
+{"version":8,"type":"context-options","origin":"testRunner","browserName":"","options":{},"platform":"darwin","wallTime":1751642011735,"monotonicTime":360916.093,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":360919.016,"class":"Test","method":"step","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","stepId":"hook@2","parentId":"hook@1","startTime":360919.132,"class":"Test","method":"step","title":"beforeEach hook","params":{},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/map.spec.js","line":4,"column":8}]}
+{"type":"before","callId":"fixture@3","stepId":"fixture@3","parentId":"hook@2","startTime":360919.549,"class":"Test","method":"step","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@4","stepId":"pw:api@4","parentId":"fixture@3","startTime":360919.825,"class":"Test","method":"step","title":"Create context","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","deviceScaleFactor":"1","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.23 Safari/537.36","viewport":"Object","baseURL":"http://localhost:3000","serviceWorkers":"allow","recordVideo":"Object","selectorEngines":"[]","testIdAttributeName":"data-testid","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","reducedMotion":"undefined","forcedColors":"undefined","contrast":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@4","endTime":360920.684,"annotations":[]}
+{"type":"after","callId":"fixture@3","endTime":360921.268,"annotations":[]}
+{"type":"before","callId":"fixture@5","stepId":"fixture@5","parentId":"hook@2","startTime":360921.376,"class":"Test","method":"step","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@6","stepId":"pw:api@6","parentId":"fixture@5","startTime":360921.721,"class":"Test","method":"step","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@6","endTime":360950.518,"annotations":[]}
+{"type":"after","callId":"fixture@5","endTime":360950.581,"annotations":[]}
+{"type":"before","callId":"pw:api@7","stepId":"pw:api@7","parentId":"hook@2","startTime":360951.076,"class":"Test","method":"step","title":"Navigate to \"/map\"","params":{"url":"/map","waitUntil":"load","timeout":"30000"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/map.spec.js","line":5,"column":16}]}
+{"type":"after","callId":"pw:api@7","endTime":361116.122,"annotations":[]}
+{"type":"after","callId":"hook@2","endTime":361116.197,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":361116.283,"annotations":[]}
+{"type":"before","callId":"pw:api@8","stepId":"pw:api@8","startTime":361117.844,"class":"Test","method":"step","title":"Is visible locator('[data-testid=\"zoom-in\"]')","params":{"selector":"[data-testid=\"zoom-in\"]","strict":"true"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/map.spec.js","line":124,"column":22}]}
+{"type":"after","callId":"pw:api@8","endTime":361127.877,"annotations":[]}
+{"type":"before","callId":"hook@9","stepId":"hook@9","startTime":361127.986,"class":"Test","method":"step","title":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@10","stepId":"fixture@10","parentId":"hook@9","startTime":361128.113,"class":"Test","method":"step","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@10","endTime":361128.157,"annotations":[]}
+{"type":"before","callId":"fixture@11","stepId":"fixture@11","parentId":"hook@9","startTime":361128.276,"class":"Test","method":"step","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@11","endTime":361128.302,"annotations":[]}
+{"type":"after","callId":"hook@9","endTime":361281.915,"annotations":[]}
+{"type":"before","callId":"attach@b0471ab10f94c6c367bedc1add8144fc","stepId":"attach@b0471ab10f94c6c367bedc1add8144fc","startTime":361358.712,"class":"Test","method":"step","title":"Attach \"trace\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@b0471ab10f94c6c367bedc1add8144fc","endTime":361358.771,"attachments":[]}

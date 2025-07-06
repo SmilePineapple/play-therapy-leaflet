@@ -1,0 +1,20 @@
+{"version":8,"type":"context-options","origin":"testRunner","browserName":"","options":{},"platform":"darwin","wallTime":1751642589775,"monotonicTime":119753.844,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":119756.383,"class":"Test","method":"step","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","stepId":"hook@2","parentId":"hook@1","startTime":119756.843,"class":"Test","method":"step","title":"beforeEach hook","params":{},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/programme.spec.js","line":4,"column":8}]}
+{"type":"before","callId":"fixture@3","stepId":"fixture@3","parentId":"hook@2","startTime":119759.079,"class":"Test","method":"step","title":"Fixture \"browser\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@4","stepId":"pw:api@4","parentId":"fixture@3","startTime":119760.698,"class":"Test","method":"step","title":"Launch browser","params":{"handleSIGINT":"false","args":"[--disable-web-security, --disable-features=VizDisplayCompositor, --no-sandbox, --disable-dev-shm-usage]","slowMo":"100","tracesDir":"/Users/jacobdale-rourke/Desktop/Communication Matters/test-results/.playwright-artifacts-19/traces","headless":"true","ignoreDefaultArgs":"undefined","ignoreAllDefaultArgs":"false","env":"undefined","timeout":"180000"},"stack":[]}
+{"type":"after","callId":"pw:api@4","endTime":119836.28,"annotations":[]}
+{"type":"after","callId":"fixture@3","endTime":119836.384,"annotations":[]}
+{"type":"before","callId":"fixture@5","stepId":"fixture@5","parentId":"hook@2","startTime":119837.083,"class":"Test","method":"step","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@6","stepId":"pw:api@6","parentId":"fixture@5","startTime":119837.996,"class":"Test","method":"step","title":"Create context","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","deviceScaleFactor":"1","hasTouch":"false","ignoreHTTPSErrors":"true","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.23 Safari/537.36","viewport":"Object","baseURL":"http://localhost:3000","serviceWorkers":"allow","recordVideo":"Object","selectorEngines":"[]","testIdAttributeName":"data-testid","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","reducedMotion":"undefined","forcedColors":"undefined","contrast":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@6","endTime":119841.76,"annotations":[]}
+{"type":"after","callId":"fixture@5","endTime":119844.497,"annotations":[]}
+{"type":"before","callId":"fixture@7","stepId":"fixture@7","parentId":"hook@2","startTime":119844.676,"class":"Test","method":"step","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@8","stepId":"pw:api@8","parentId":"fixture@7","startTime":119845.374,"class":"Test","method":"step","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@8","endTime":119888.946,"annotations":[]}
+{"type":"after","callId":"fixture@7","endTime":119888.995,"annotations":[]}
+{"type":"before","callId":"pw:api@9","stepId":"pw:api@9","parentId":"hook@2","startTime":119889.912,"class":"Test","method":"step","title":"Navigate to \"/programme\"","params":{"url":"/programme","waitUntil":"load","timeout":"60000"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/programme.spec.js","line":5,"column":16}]}
+{"type":"after","callId":"pw:api@9","endTime":120162.948,"annotations":[]}
+{"type":"after","callId":"hook@2","endTime":120162.999,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":120163.183,"annotations":[]}
+{"type":"before","callId":"expect@10","stepId":"expect@10","startTime":120164.171,"class":"Test","method":"step","title":"Expect \"toBeVisible\"","params":{},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/programme.spec.js","line":14,"column":65}]}

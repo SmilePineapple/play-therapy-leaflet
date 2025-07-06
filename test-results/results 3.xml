@@ -1,0 +1,57 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="1.6009120000000112">
+<testsuite name="programme.spec.js" timestamp="2025-07-04T15:15:46.094Z" hostname="chromium" tests="1" failures="1" skipped="0" time="0.853" errors="0">
+<testcase name="Programme Page › should be responsive on mobile" classname="programme.spec.js" time="0.853">
+<failure message="programme.spec.js:211:3 should be responsive on mobile" type="FAILURE">
+<![CDATA[  [chromium] › programme.spec.js:211:3 › Programme Page › should be responsive on mobile ───────────
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('h1') resolved to 2 elements:
+        1) <h1 class="header-title">…</h1> aka getByRole('heading', { name: 'Communication Matters' })
+        2) <h1 tabindex="-1">Loading Conference Programme...</h1> aka getByRole('heading', { name: 'Loading Conference Programme' })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('h1')
+
+
+      212 |     await page.setViewportSize({ width: 375, height: 667 });
+      213 |     
+    > 214 |     await expect(page.locator('h1')).toBeVisible();
+          |                                      ^
+      215 |     await expect(page.locator('[data-testid="sessions-list"]')).toBeVisible();
+      216 |     await expect(page.locator('[data-testid="filter-options"]')).toBeVisible();
+      217 |   });
+        at /Users/jacobdale-rourke/Desktop/Communication Matters/tests/programme.spec.js:214:38
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/programme-Programme-Page-should-be-responsive-on-mobile-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/programme-Programme-Page-should-be-responsive-on-mobile-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/programme-Programme-Page-should-be-responsive-on-mobile-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/programme-Programme-Page-should-be-responsive-on-mobile-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/programme-Programme-Page-should-be-responsive-on-mobile-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|programme-Programme-Page-should-be-responsive-on-mobile-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|programme-Programme-Page-should-be-responsive-on-mobile-chromium/video.webm]]
+
+[[ATTACHMENT|programme-Programme-Page-should-be-responsive-on-mobile-chromium/error-context.md]]
+
+[[ATTACHMENT|programme-Programme-Page-should-be-responsive-on-mobile-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

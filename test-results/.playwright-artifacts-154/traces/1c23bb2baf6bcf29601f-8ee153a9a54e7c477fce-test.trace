@@ -1,0 +1,20 @@
+{"version":8,"type":"context-options","origin":"testRunner","browserName":"","options":{},"platform":"darwin","wallTime":1751642031094,"monotonicTime":380274.551,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":380277.261,"class":"Test","method":"step","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","stepId":"hook@2","parentId":"hook@1","startTime":380277.464,"class":"Test","method":"step","title":"beforeEach hook","params":{},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":4,"column":8}]}
+{"type":"before","callId":"fixture@3","stepId":"fixture@3","parentId":"hook@2","startTime":380277.995,"class":"Test","method":"step","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@4","stepId":"pw:api@4","parentId":"fixture@3","startTime":380278.259,"class":"Test","method":"step","title":"Create context","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","deviceScaleFactor":"1","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.23 Safari/537.36","viewport":"Object","baseURL":"http://localhost:3000","serviceWorkers":"allow","recordVideo":"Object","selectorEngines":"[]","testIdAttributeName":"data-testid","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","reducedMotion":"undefined","forcedColors":"undefined","contrast":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@4","endTime":380281.127,"annotations":[]}
+{"type":"after","callId":"fixture@3","endTime":380282.093,"annotations":[]}
+{"type":"before","callId":"fixture@5","stepId":"fixture@5","parentId":"hook@2","startTime":380282.43,"class":"Test","method":"step","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@6","stepId":"pw:api@6","parentId":"fixture@5","startTime":380283.351,"class":"Test","method":"step","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@6","endTime":380318.935,"annotations":[]}
+{"type":"after","callId":"fixture@5","endTime":380318.987,"annotations":[]}
+{"type":"before","callId":"pw:api@7","stepId":"pw:api@7","parentId":"hook@2","startTime":380319.778,"class":"Test","method":"step","title":"Navigate to \"/news\"","params":{"url":"/news","waitUntil":"load","timeout":"30000"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":5,"column":16}]}
+{"type":"after","callId":"pw:api@7","endTime":380505.036,"annotations":[]}
+{"type":"after","callId":"hook@2","endTime":380505.155,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":380505.725,"annotations":[]}
+{"type":"before","callId":"pw:api@8","stepId":"pw:api@8","startTime":380506.592,"class":"Test","method":"step","title":"Set viewport size","params":{"viewportSize":"Object"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":179,"column":16}]}
+{"type":"after","callId":"pw:api@8","endTime":380510.03,"annotations":[]}
+{"type":"before","callId":"expect@9","stepId":"expect@9","startTime":380510.829,"class":"Test","method":"step","title":"Expect \"toBeVisible\"","params":{},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":181,"column":38}]}
+{"type":"after","callId":"expect@9","endTime":380880.138,"annotations":[]}
+{"type":"before","callId":"expect@10","stepId":"expect@10","startTime":380880.627,"class":"Test","method":"step","title":"Expect \"toBeVisible\"","params":{},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":182,"column":70}]}

@@ -1,0 +1,31 @@
+{"version":8,"type":"context-options","origin":"testRunner","browserName":"","options":{},"platform":"darwin","wallTime":1751642000804,"monotonicTime":349985.205,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":349988.562,"class":"Test","method":"step","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","stepId":"hook@2","parentId":"hook@1","startTime":349989.077,"class":"Test","method":"step","title":"beforeEach hook","params":{},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/home.spec.js","line":4,"column":8}]}
+{"type":"before","callId":"fixture@3","stepId":"fixture@3","parentId":"hook@2","startTime":349991.542,"class":"Test","method":"step","title":"Fixture \"browser\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@4","stepId":"pw:api@4","parentId":"fixture@3","startTime":349993.793,"class":"Test","method":"step","title":"Launch browser","params":{"handleSIGINT":"false","tracesDir":"/Users/jacobdale-rourke/Desktop/Communication Matters/test-results/.playwright-artifacts-135/traces","headless":"true","ignoreDefaultArgs":"undefined","ignoreAllDefaultArgs":"false","env":"undefined","timeout":"180000"},"stack":[]}
+{"type":"after","callId":"pw:api@4","endTime":350069.471,"annotations":[]}
+{"type":"after","callId":"fixture@3","endTime":350069.598,"annotations":[]}
+{"type":"before","callId":"fixture@5","stepId":"fixture@5","parentId":"hook@2","startTime":350070.907,"class":"Test","method":"step","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@6","stepId":"pw:api@6","parentId":"fixture@5","startTime":350072.432,"class":"Test","method":"step","title":"Create context","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","deviceScaleFactor":"1","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.23 Safari/537.36","viewport":"Object","baseURL":"http://localhost:3000","serviceWorkers":"allow","recordVideo":"Object","selectorEngines":"[]","testIdAttributeName":"data-testid","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","reducedMotion":"undefined","forcedColors":"undefined","contrast":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@6","endTime":350076.473,"annotations":[]}
+{"type":"after","callId":"fixture@5","endTime":350081.789,"annotations":[]}
+{"type":"before","callId":"fixture@7","stepId":"fixture@7","parentId":"hook@2","startTime":350082.586,"class":"Test","method":"step","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@8","stepId":"pw:api@8","parentId":"fixture@7","startTime":350084.476,"class":"Test","method":"step","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@8","endTime":350139.746,"annotations":[]}
+{"type":"after","callId":"fixture@7","endTime":350139.801,"annotations":[]}
+{"type":"before","callId":"pw:api@9","stepId":"pw:api@9","parentId":"hook@2","startTime":350140.875,"class":"Test","method":"step","title":"Navigate to \"/\"","params":{"url":"/","waitUntil":"load","timeout":"30000"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/home.spec.js","line":5,"column":16}]}
+{"type":"after","callId":"pw:api@9","endTime":350350.07,"annotations":[]}
+{"type":"after","callId":"hook@2","endTime":350350.172,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":350350.572,"annotations":[]}
+{"type":"before","callId":"pw:api@10","stepId":"pw:api@10","startTime":350355.875,"class":"Test","method":"step","title":"Click locator('nav a[href=\"/qa\"]')","params":{"selector":"nav a[href=\"/qa\"]","timeout":"10000"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/home.spec.js","line":50,"column":16}]}
+{"type":"after","callId":"pw:api@10","endTime":350605.663,"annotations":[]}
+{"type":"before","callId":"expect@11","stepId":"expect@11","startTime":350606.678,"class":"Test","method":"step","title":"Expect \"toHaveURL\"","params":{"expected":"Object"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/home.spec.js","line":51,"column":24}]}
+{"type":"after","callId":"expect@11","endTime":350637.933,"annotations":[]}
+{"type":"before","callId":"hook@12","stepId":"hook@12","startTime":350638.205,"class":"Test","method":"step","title":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@13","stepId":"fixture@13","parentId":"hook@12","startTime":350639.045,"class":"Test","method":"step","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@13","endTime":350639.133,"annotations":[]}
+{"type":"before","callId":"fixture@14","stepId":"fixture@14","parentId":"hook@12","startTime":350639.207,"class":"Test","method":"step","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@14","endTime":350639.294,"annotations":[]}
+{"type":"after","callId":"hook@12","endTime":350936.236,"annotations":[]}
+{"type":"before","callId":"attach@24b876624bdb5daefe75dac0745ca2a9","stepId":"attach@24b876624bdb5daefe75dac0745ca2a9","startTime":351095.433,"class":"Test","method":"step","title":"Attach \"trace\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@24b876624bdb5daefe75dac0745ca2a9","endTime":351095.494,"attachments":[]}

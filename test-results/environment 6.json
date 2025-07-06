@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-07-04T15:35:37.786Z",
+  "nodeVersion": "v23.7.0",
+  "platform": "darwin",
+  "arch": "arm64",
+  "testUrl": "http://localhost:3000",
+  "adminCredentials": {
+    "email": "admin@communicationmatters.org",
+    "passwordSet": true
+  }
+}

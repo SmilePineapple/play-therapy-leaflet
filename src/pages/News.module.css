@@ -1,0 +1,522 @@
+.newsPage {
+  padding: var(--spacing-xl) 0;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.pageHeader h1 {
+  font-size: var(--font-size-xl);
+  color: var(--dark-grey);
+  margin-bottom: var(--spacing-md);
+}
+
+.pageDescription {
+  font-size: var(--font-size-large);
+  color: var(--secondary-grey);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsStats {
+  margin-bottom: var(--spacing-xl);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.statCard {
+  background-color: var(--white);
+  border: 2px solid var(--light-grey);
+  border-radius: var(--border-radius-large);
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.statNumber {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-grey);
+  margin-bottom: var(--spacing-xs);
+}
+
+.statLabel {
+  font-size: var(--font-size-base);
+  color: var(--secondary-grey);
+  font-weight: 500;
+}
+
+.newsControls {
+  background-color: var(--light-grey);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-large);
+  margin-bottom: var(--spacing-xl);
+}
+
+.controlsGrid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--spacing-lg);
+  align-items: end;
+  margin-bottom: var(--spacing-md);
+}
+
+.filterFieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filterLegend {
+  font-weight: 600;
+  color: var(--dark-grey);
+  margin-bottom: var(--spacing-sm);
+}
+
+.filterButtons {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--secondary-grey);
+  border-radius: var(--border-radius);
+  background-color: var(--white);
+  color: var(--dark-grey);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: var(--touch-target);
+}
+
+.filterBtn:hover,
+.filterBtn:focus {
+  border-color: var(--primary-yellow);
+  background-color: var(--primary-yellow);
+}
+
+.filterBtn.active {
+  border-color: var(--primary-yellow);
+  background-color: var(--primary-yellow);
+  font-weight: 600;
+}
+
+.actionsGroup {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.resultsInfo {
+  font-weight: 600;
+  color: var(--secondary-grey);
+  text-align: center;
+}
+
+.noAnnouncements {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background-color: var(--light-grey);
+  border-radius: var(--border-radius-large);
+}
+
+.noAnnouncements h3 {
+  color: var(--dark-grey);
+  margin-bottom: var(--spacing-md);
+}
+
+.noAnnouncements p {
+  color: var(--secondary-grey);
+  margin-bottom: var(--spacing-md);
+}
+
+.announcementsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.announcementCard {
+  background-color: var(--white);
+  border: 2px solid var(--light-grey);
+  border-radius: var(--border-radius-large);
+  padding: var(--spacing-lg);
+  transition: all 0.2s ease;
+}
+
+.announcementCard.unread {
+  border-color: var(--primary-yellow);
+  background-color: #fffef0;
+}
+
+.announcementCard.urgent {
+  border-color: #ff4444;
+  background-color: #fff5f5;
+}
+
+.announcementHeader {
+  margin-bottom: var(--spacing-md);
+}
+
+.announcementMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.priorityIcon,
+.categoryIcon {
+  font-size: 1.2rem;
+}
+
+.announcementTime {
+  color: var(--secondary-grey);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.unreadIndicator {
+  margin-left: auto;
+}
+
+.announcementTitle {
+  font-size: var(--font-size-large);
+  font-weight: 600;
+  color: var(--dark-grey);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.urgentBanner {
+  background-color: #ff4444;
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: var(--spacing-sm);
+}
+
+.announcementSummary {
+  color: var(--secondary-grey);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Base accessible button styles for AAC users */
+.accessibleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  min-height: 56px; /* Large touch target for AAC users */
+  min-width: 140px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 3px solid transparent;
+  border-radius: var(--border-radius-large);
+  font-family: var(--font-family);
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.accessibleButton:focus {
+  outline: 4px solid #0066cc;
+  outline-offset: 2px;
+  z-index: 10;
+}
+
+.accessibleButton:focus-visible {
+  outline: 4px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.buttonIcon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.buttonText {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.buttonArrow {
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+/* Expand/Read More Button - High contrast yellow */
+.expandButton {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border-color: #FF8C00;
+  color: #000000;
+  box-shadow: 0 4px 8px rgba(255, 140, 0, 0.3);
+}
+
+.expandButton:hover {
+  background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+  border-color: #FF6347;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.4);
+}
+
+.expandButton:hover .buttonArrow {
+  transform: scale(1.2);
+}
+
+.expandButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 140, 0, 0.3);
+}
+
+/* Details Button - High contrast blue */
+.detailsButton {
+  background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+  border-color: #003366;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
+}
+
+.detailsButton:hover {
+  background: linear-gradient(135deg, #004499 0%, #003366 100%);
+  border-color: #002244;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
+}
+
+.detailsButton:hover .buttonArrow {
+  transform: translateX(4px);
+}
+
+.detailsButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 102, 204, 0.3);
+}
+
+/* Legacy popup styles for backwards compatibility */
+.popupButton {
+  background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+  border: 3px solid #003366;
+  border-radius: var(--border-radius-large);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-height: 56px;
+}
+
+.popupButton:hover,
+.popupButton:focus {
+  background: linear-gradient(135deg, #004499 0%, #003366 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
+}
+
+.popupIcon {
+  font-size: 1.5rem;
+  filter: brightness(1.2);
+}
+
+.expandBtn {
+  background: var(--primary-yellow);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-grey);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.expandBtn:hover,
+.expandBtn:focus {
+  background: var(--secondary-grey);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.announcementFullContent {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--light-grey);
+}
+
+.fullContentText {
+  color: var(--dark-grey);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.announcementAction {
+  margin-top: var(--spacing-md);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+/* Updated actions container for accessible buttons */
+.announcementActions {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  padding: var(--spacing-sm) 0;
+}
+
+.announcementFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--light-grey);
+}
+
+.announcementTags {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.tag {
+  padding: 2px var(--spacing-xs);
+  border-radius: var(--border-radius);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tag.priorityUrgent {
+  background-color: #ff4444;
+  color: white;
+}
+
+.tag.priorityImportant {
+  background-color: #ff9800;
+  color: white;
+}
+
+.tag.priorityNormal {
+  background-color: var(--secondary-grey);
+  color: white;
+}
+
+.tag.categorySchedule {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.tag.categoryVenue {
+  background-color: #2196F3;
+  color: white;
+}
+
+.tag.categoryTechnical {
+  background-color: #9C27B0;
+  color: white;
+}
+
+.tag.categoryCatering {
+  background-color: #FF5722;
+  color: white;
+}
+
+.tag.categoryTransport {
+  background-color: #607D8B;
+  color: white;
+}
+
+/* Footer actions - different from content actions */
+.announcementFooterActions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+  .controlsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .filterButtons {
+    justify-content: center;
+  }
+
+  .actionsGroup {
+    justify-content: center;
+  }
+
+  .announcementFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  /* Accessible buttons responsive design */
+  .announcementActions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-md);
+  }
+
+  .accessibleButton {
+    width: 100%;
+    min-width: unset;
+    justify-content: center;
+  }
+
+  .announcementFooterActions {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Ensure touch targets remain large on mobile */
+  .accessibleButton {
+    min-height: 60px; /* Slightly larger on mobile */
+    font-size: 1.1rem;
+  }
+
+  .buttonIcon {
+    font-size: 1.6rem;
+  }
+}

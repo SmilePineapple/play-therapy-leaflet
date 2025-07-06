@@ -1,0 +1,29 @@
+{"version":8,"type":"context-options","origin":"testRunner","browserName":"","options":{},"platform":"darwin","wallTime":1751642029429,"monotonicTime":378610.216,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":378613.408,"class":"Test","method":"step","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","stepId":"hook@2","parentId":"hook@1","startTime":378613.891,"class":"Test","method":"step","title":"beforeEach hook","params":{},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":4,"column":8}]}
+{"type":"before","callId":"fixture@3","stepId":"fixture@3","parentId":"hook@2","startTime":378615.822,"class":"Test","method":"step","title":"Fixture \"browser\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@4","stepId":"pw:api@4","parentId":"fixture@3","startTime":378618.029,"class":"Test","method":"step","title":"Launch browser","params":{"handleSIGINT":"false","tracesDir":"/Users/jacobdale-rourke/Desktop/Communication Matters/test-results/.playwright-artifacts-154/traces","headless":"true","ignoreDefaultArgs":"undefined","ignoreAllDefaultArgs":"false","env":"undefined","timeout":"180000"},"stack":[]}
+{"type":"after","callId":"pw:api@4","endTime":378694.418,"annotations":[]}
+{"type":"after","callId":"fixture@3","endTime":378694.542,"annotations":[]}
+{"type":"before","callId":"fixture@5","stepId":"fixture@5","parentId":"hook@2","startTime":378695.573,"class":"Test","method":"step","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@6","stepId":"pw:api@6","parentId":"fixture@5","startTime":378696.369,"class":"Test","method":"step","title":"Create context","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","deviceScaleFactor":"1","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.23 Safari/537.36","viewport":"Object","baseURL":"http://localhost:3000","serviceWorkers":"allow","recordVideo":"Object","selectorEngines":"[]","testIdAttributeName":"data-testid","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","reducedMotion":"undefined","forcedColors":"undefined","contrast":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@6","endTime":378701.464,"annotations":[]}
+{"type":"after","callId":"fixture@5","endTime":378705.439,"annotations":[]}
+{"type":"before","callId":"fixture@7","stepId":"fixture@7","parentId":"hook@2","startTime":378705.759,"class":"Test","method":"step","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@8","stepId":"pw:api@8","parentId":"fixture@7","startTime":378707.43,"class":"Test","method":"step","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@8","endTime":378754.769,"annotations":[]}
+{"type":"after","callId":"fixture@7","endTime":378754.843,"annotations":[]}
+{"type":"before","callId":"pw:api@9","stepId":"pw:api@9","parentId":"hook@2","startTime":378756.26,"class":"Test","method":"step","title":"Navigate to \"/news\"","params":{"url":"/news","waitUntil":"load","timeout":"30000"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":5,"column":16}]}
+{"type":"after","callId":"pw:api@9","endTime":378987.241,"annotations":[]}
+{"type":"after","callId":"hook@2","endTime":378987.365,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":378987.641,"annotations":[]}
+{"type":"before","callId":"pw:api@10","stepId":"pw:api@10","startTime":378990.915,"class":"Test","method":"step","title":"Is visible locator('[data-testid=\"announcement-item\"]').first()","params":{"selector":"[data-testid=\"announcement-item\"] >> nth=0","strict":"true"},"stack":[{"file":"/Users/jacobdale-rourke/Desktop/Communication Matters/tests/news.spec.js","line":112,"column":33}]}
+{"type":"after","callId":"pw:api@10","endTime":379011.608,"annotations":[]}
+{"type":"before","callId":"hook@11","stepId":"hook@11","startTime":379012.172,"class":"Test","method":"step","title":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@12","stepId":"fixture@12","parentId":"hook@11","startTime":379012.672,"class":"Test","method":"step","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@12","endTime":379012.763,"annotations":[]}
+{"type":"before","callId":"fixture@13","stepId":"fixture@13","parentId":"hook@11","startTime":379012.849,"class":"Test","method":"step","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@13","endTime":379012.875,"annotations":[]}
+{"type":"after","callId":"hook@11","endTime":379187.077,"annotations":[]}
+{"type":"before","callId":"attach@dc579a5e62d922c0d8ce47938e8d4f72","stepId":"attach@dc579a5e62d922c0d8ce47938e8d4f72","startTime":379289.258,"class":"Test","method":"step","title":"Attach \"trace\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@dc579a5e62d922c0d8ce47938e8d4f72","endTime":379289.352,"attachments":[]}

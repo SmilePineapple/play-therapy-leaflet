@@ -1,0 +1,15 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="1.3017360000000044">
+<testsuite name="programme.spec.js" timestamp="2025-07-04T15:24:30.880Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.532" errors="0">
+<testcase name="Programme Page › should display session status indicators" classname="programme.spec.js" time="0.532">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|programme-Programme-Page-s-1a8f7-y-session-status-indicators-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|programme-Programme-Page-s-1a8f7-y-session-status-indicators-chromium/video.webm]]
+
+[[ATTACHMENT|programme-Programme-Page-s-1a8f7-y-session-status-indicators-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

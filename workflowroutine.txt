@@ -1,0 +1,158 @@
+TIMEZONE FIX SESSION - Applied comprehensive timezone corrections across all components:
+
+1. Fixed Programme.js - Updated formatTime function to parse datetime strings as local time
+2. Fixed SessionDetail.js - Updated formatTime function with same local time parsing logic
+3. Fixed MyAgenda.js - Updated formatTime, formatDate, formatDateShort, and groupSessionsByDay functions
+4. Fixed MyAgenda.js gap detection - Updated end_time and start_time parsing in gap calculation logic
+5. Fixed AdminDashboard.js - Updated formatDate function with local time parsing
+6. Fixed QuestionManager.js - Updated formatDate function with local time parsing
+7. Fixed Analytics.js - Updated generateTimeRangeData function to handle created_at dates properly
+
+All functions now properly handle datetime strings containing 'T' but no timezone info ('Z' or '+') by manually extracting date/time components and creating local Date objects. This resolves the one-hour time discrepancy issue across the entire application.
+
+The fix ensures consistent time display by avoiding automatic UTC conversion when parsing ISO datetime strings without explicit timezone information.
+
+## Session Complete - Runtime Error Fixed
+
+**Date:** 2025-01-01
+**Issue:** TypeError: dateString.includes is not a function in Programme.js
+**Status:** ✅ RESOLVED
+**Files Modified:**
+- `src/pages/Programme.js` - Updated formatTime and formatDate functions with comprehensive input validation
+- Added proper type checking for string vs Date object inputs
+- Fixed session sorting, filtering, and display logic
+- Enhanced error handling and fallback mechanisms
+
+**Current Status:**
+- All sessions display correctly with proper time formatting
+- No more console errors related to date/time functions
+- Session filtering and search functionality working properly
+- Bookmark functionality operational
+
+**Latest Updates:**
+- `src/pages/Programme.js` - Fixed session sorting, filtering, and display logic
+- `src/components/admin/ContentModerator.js` - Removed trailing spaces and extra newlines
+- Track sorting issue resolved - sessions now display in correct order (1.1, 1.2, etc. before P tracks)
+- Used Playwright automation to verify and debug the sorting functionality
+- Confirmed proper session ordering with tracks 1.1 appearing first as requested
+- **DEPLOYED TO VERCEL** ✅ - App successfully deployed to production at https://communication-matters-d8nb8kok9.vercel.app
+- Deployment completed with exit code 0 despite minor linting warnings (trailing spaces)
+- All features including track sorting, session filtering, and Supabase integration are live in production
+
+## Latest Updates (Most Recent First)
+
+### 2025-01-06 - GitHub Integration Setup - UPDATED STATUS ✅
+- **DISCOVERY** ✅ - Communication Matters project already deployed on Vercel!
+- **PRODUCTION URL** ✅ - https://communication-matters.vercel.app (live and working)
+- **PROJECT ID** ✅ - prj_0C6MqijxilF7V4cjify6yppZ1trU
+- **LOCAL LINK** ✅ - Project already linked to Vercel via `.vercel/project.json`
+- **REPOSITORY STATUS VERIFIED** ✅ - GitHub repo: SmilePineapple/play-therapy-leaflet
+- **REPOSITORY NAMING CLARIFICATION** ✅ - Repository named `play-therapy-leaflet` but contains Communication Matters project code
+- **UPDATED INTEGRATION GUIDE** ✅ - Modified for existing project connection with troubleshooting section
+- **BRANCH CONFIGURATION** ✅ - Added guidance for main branch configuration in Vercel
+- **TWO OPTIONS PROVIDED** ✅ - Connect existing project OR create new from GitHub
+- **NEXT STEP** 📋 - Follow Option 1 in guide to connect GitHub to existing Vercel project
+
+### 2025-01-06 - Deployment Attempt ⚠️
+- **VERCEL UPLOAD LIMIT REACHED** ⚠️ - Hit free tier limit (5000 files/day) - "Too many requests - try again in 24 hours"
+- **BUILD SUCCESSFUL** ✅ - Production build completed successfully with only minor ESLint warnings
+- **VERCEL CLI UPDATED** ✅ - Updated to latest version (44.2.12)
+- **AUTHENTICATION CONFIRMED** ✅ - Logged in as jakedalerourke-7711
+- **PROJECT CONFIGURED** ✅ - Existing Vercel project found (prj_0C6MqijxilF7V4cjify6yppZ1trU)
+- **VERCELIGNORE CREATED** ✅ - Added .vercelignore to exclude large files and reduce upload size
+- **DEPLOYMENT OPTIONS** ℹ️ - Alternative: GitHub integration, wait 24 hours, or upgrade Vercel plan
+
+### 2025-01-06 - Collapsible Header Implementation ✅
+- **FIXED TRAILING SPACES** ✅ - Removed ESLint warnings from Header.js
+- **MOBILE TESTING COMPLETE** ✅ - Used Playwright to test collapsible accessibility controls on mobile (375x667 viewport)
+- **SCREENSHOTS CAPTURED** ✅ - Three key states documented:
+  1. Collapsed state (clean "Settings" button)
+  2. Expanded state (full accessibility controls visible)
+  3. High contrast active (functionality confirmed)
+- **COLLAPSIBLE HEADER IMPLEMENTED** ✅ - Added expandable/collapsible accessibility controls in Header.js
+- **CSS ANIMATIONS ADDED** ✅ - Smooth expand/collapse transitions with proper positioning
+- **ACCESSIBILITY MAINTAINED** ✅ - ARIA attributes, keyboard navigation, and screen reader support preserved
+- **MOBILE UX IMPROVED** ✅ - Space-efficient design saves mobile screen real estate
+- **RESPONSIVE DESIGN** ✅ - Works across all screen sizes with appropriate touch targets
+
+## Session Complete - Session Sorting Fix
+
+**Date:** 2025-01-01
+**Issue:** Session 1.1 (11:15-12:00) appearing in 10th position instead of first
+**Root Cause:** Sessions were not being properly sorted because the sorting logic used `start_time` field which doesn't exist in the JSON data - only `formatted_time` and `time` fields exist.
+
+**Files Modified:**
+- `src/pages/Programme.js` - Fixed session sorting, filtering, and display logic
+
+**Key Changes:**
+- Updated loadSessions() sorting to handle multiple time field formats (start_time, formatted_time, time)
+- Added secondary sorting by track number when times are identical
+- Fixed applyFilters() day filtering to work with available date fields
+- Updated uniqueDays calculation to use correct date fields
+- Fixed session display JSX to show times from available fields
+- Added comprehensive debugging logs to track sorting behavior
+
+**Solution Details:**
+- Parse `formatted_time` field ("2025-09-08T11:15:00 - 2025-09-08T12:00:00")
+- Parse `time` field ("11.15 - 12.00") and combine with conference date
+- Sort by time first, then by track number for sessions at same time
+- Ensure session 1.1 appears first as it should be at 11:15-12:00
+
+Sessions are now properly sorted chronologically with track-based sub-sorting.
+
+## Track-Based Sorting Implementation (2025-01-04)
+
+**Issue**: User requested sessions to be ordered by track number instead of time.
+
+**Solution**: 
+1. Modified sorting logic in `loadSessions` function to prioritize track number
+2. Extract numeric track values using regex to handle track formats like "1.1", "2", etc.
+3. Implemented primary sort by track number with secondary sort by time
+4. Added debug logging to track the sorting process
+
+**Result**: Sessions are now ordered by track number (1.1, 1.2, 2.1, etc.) with time as secondary sort criteria.
+
+## Playwright Test Suite Improvements (2025-01-04)
+
+**Issue**: Multiple Playwright test failures due to missing components and data-testid attributes.
+
+**Components Created/Fixed**:
+1. **About.js** - Created complete About page component with all required sections:
+   - Mission, vision, values, history sections
+   - Team and board member displays
+   - Achievements and statistics
+   - Partnership information
+   - Contact details
+   - Added comprehensive data-testid attributes for testing
+
+2. **About.css** - Created responsive styling for About component
+
+3. **App.js** - Added /about route and imported About component
+
+4. **Admin.js** - Enhanced with proper data-testid attributes:
+   - Logout button, navigation tabs (dashboard, questions, moderation, analytics)
+   - Main content area
+   - Updated h1 text to "Admin Dashboard"
+
+5. **AdminAuth.js** - Improved form validation and testing attributes:
+   - Added data-testid attributes for form, inputs, submit button, error messages
+   - Enhanced validation with specific error messages ("Email is required", "Password is required")
+   - Improved error handling for invalid credentials
+   - Added proper form role attribute
+
+6. **AdminDashboard.js** - Added data-testid attributes for statistics:
+   - Dashboard stats container
+   - Individual stat cards (total questions, pending questions, announcements, sessions, bookmarks)
+
+**Test Results**:
+- **Before**: Multiple failures across About and Admin pages
+- **After**: 126 tests passing with only 1 flaky test (About page accessibility)
+- Significant improvement in test reliability and coverage
+- All major components now have proper test infrastructure
+
+**Key Improvements**:
+- Resolved timeout issues by adding proper data-testid attributes
+- Created missing About page component and route
+- Enhanced admin authentication and dashboard testing
+- Improved form validation and error handling
+- Added comprehensive accessibility attributes
