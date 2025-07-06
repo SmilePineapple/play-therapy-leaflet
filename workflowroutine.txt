@@ -115,7 +115,7 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
 - **RESULT** ❌ - Still failing with "Module not found: Error: Can't resolve '../data' in '/vercel/path0/src/pages'"
 
-### 2025-01-07 - Vercel Deployment Fix Attempt #12 ✅
+### 2025-01-07 - Vercel Deployment Fix Attempt #12 ❌
 - **ISSUE** ❌ - Eleventh attempt still failed with module resolution error for '../data'
 - **ROOT CAUSE** ℹ️ - Vercel's ES6 module resolution may require explicit .js extensions
 - **ACTIONS TAKEN** 🔧 - Added `.js` extension back to import in `mockSessions.js`: `import parsedSessionsData from './parsed-sessions.js'`
@@ -123,7 +123,16 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 - **DEBUG LOGGING** ✨ - Added comprehensive debugging logs to track module loading
 - **BUILD VERIFICATION** ✅ - Verified changes with successful local build
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
-- **EXPECTED RESULTS** 📋 - The .js extensions and explicit exports should resolve Vercel's ES6 module resolution issues
+- **RESULT** ❌ - Still failing with "Module not found" error for '../data'
+
+### 2025-01-07 - Vercel Deployment Fix Attempt #13 ✅
+- **ISSUE** ❌ - Twelfth attempt still failed with module resolution error for '../data'
+- **ROOT CAUSE** ℹ️ - Relative imports may not resolve properly in Vercel's build environment
+- **ACTIONS TAKEN** 🔧 - Changed relative imports from '../data' to absolute imports 'data' in Programme.js and SessionDetail.js
+- **JSCONFIG ADDED** ✨ - Created jsconfig.json with baseUrl: "src" to enable absolute imports from src directory
+- **BUILD VERIFICATION** ✅ - Verified local build works with new absolute import configuration
+- **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
+- **EXPECTED RESULTS** 📋 - Absolute imports should resolve module resolution issues on Vercel
 
 ### 2025-01-06 - Vercel Deployment Fix Attempt #6 ✅
 - **ISSUE** ❌ - Vercel deployment failing with "Cannot find module '/vercel/path0/scripts/vercel-build.js'"

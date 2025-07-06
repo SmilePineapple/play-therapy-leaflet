@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
-    "paths": {
-      "*": ["*"]
-    }
+    "checkJs": false,
+    "allowJs": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
   ]
 }
