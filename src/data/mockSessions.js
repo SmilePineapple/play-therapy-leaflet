@@ -5,6 +5,8 @@
 // Import the parsed sessions data
 import parsedSessionsData from './parsed-sessions.json';
 
+console.log('🔧 Debug - mockSessions.js loaded, parsedSessionsData length:', parsedSessionsData?.length || 'undefined');
+
 
 // Transform parsed data to match expected format
 const transformedSessions = parsedSessionsData.map(session => {
