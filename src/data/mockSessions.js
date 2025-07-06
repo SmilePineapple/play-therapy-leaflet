@@ -3,7 +3,8 @@
 // Updated for 2025 Conference (September 8-12, 2025)
 
 // Import the parsed sessions data
-import parsedSessionsData from './parsed-sessions.json';
+// Using JS module instead of JSON for better Vercel compatibility
+import parsedSessionsData from './parsed-sessions.js';
 
 console.log('🔧 Debug - mockSessions.js loaded, parsedSessionsData length:', parsedSessionsData?.length || 'undefined');
 
