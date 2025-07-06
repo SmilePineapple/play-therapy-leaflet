@@ -161,14 +161,23 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
 - **RESULT** ❌ - Still failed with "Module not found: Error: Can't resolve '../data/index'"
 
-### 2025-01-07 - Vercel Deployment Fix Attempt #17 ✅
+### 2025-01-07 - Vercel Deployment Fix Attempt #17 ❌
 - **ISSUE** ❌ - Sixteenth attempt still failed with module resolution error for '../data/index'
 - **ROOT CAUSE** ℹ️ - Vercel's build environment may require explicit .js extensions for ES modules
 - **ACTIONS TAKEN** 🔧 - Added explicit .js extensions to import paths: '../data/index.js'
 - **PATH EXTENSIONS** ✨ - Updated both Programme.js and SessionDetail.js with .js extensions
 - **BUILD VERIFICATION** ✅ - Verified local build works with explicit .js extensions
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
-- **EXPECTED RESULTS** 📋 - Explicit file extensions should resolve module resolution issues on Vercel
+- **RESULT** ❌ - Still failed with "Module not found: Error: Can't resolve '../data/index.js'"
+
+### 2025-01-07 - Vercel Deployment Fix Attempt #18 ✅
+- **ISSUE** ❌ - Seventeenth attempt still failed with module resolution error for '../data/index.js'
+- **ROOT CAUSE** ℹ️ - The index.js file may be causing module resolution issues on Vercel
+- **ACTIONS TAKEN** 🔧 - Changed import paths from '../data/index.js' to '../data/mockSessions.js'
+- **DIRECT IMPORT** ✨ - Updated both Programme.js and SessionDetail.js to bypass the index.js file entirely
+- **BUILD VERIFICATION** ✅ - Verified local build works with direct mockSessions.js imports
+- **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
+- **EXPECTED RESULTS** 📋 - Direct imports should bypass index.js module resolution issues
 
 ### 2025-01-06 - Vercel Deployment Fix Attempt #6 ✅
 - **ISSUE** ❌ - Vercel deployment failing with "Cannot find module '/vercel/path0/scripts/vercel-build.js'"
