@@ -125,14 +125,23 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
 - **RESULT** ❌ - Still failing with "Module not found" error for '../data'
 
-### 2025-01-07 - Vercel Deployment Fix Attempt #13 ✅
+### 2025-01-07 - Vercel Deployment Fix Attempt #13 ❌
 - **ISSUE** ❌ - Twelfth attempt still failed with module resolution error for '../data'
 - **ROOT CAUSE** ℹ️ - Relative imports may not resolve properly in Vercel's build environment
 - **ACTIONS TAKEN** 🔧 - Changed relative imports from '../data' to absolute imports 'data' in Programme.js and SessionDetail.js
 - **JSCONFIG ADDED** ✨ - Created jsconfig.json with baseUrl: "src" to enable absolute imports from src directory
 - **BUILD VERIFICATION** ✅ - Verified local build works with new absolute import configuration
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
-- **EXPECTED RESULTS** 📋 - Absolute imports should resolve module resolution issues on Vercel
+- **RESULT** ❌ - Vercel doesn't support jsconfig.json baseUrl for absolute imports
+
+### 2025-01-07 - Vercel Deployment Fix Attempt #14 ✅
+- **ISSUE** ❌ - Thirteenth attempt failed with jsconfig.json absolute import configuration
+- **ROOT CAUSE** ℹ️ - Vercel's build environment doesn't properly support jsconfig.json baseUrl configuration
+- **ACTIONS TAKEN** 🔧 - Reverted back to relative imports '../data' in Programme.js and SessionDetail.js
+- **JSCONFIG REMOVED** ✨ - Removed jsconfig.json file that was causing conflicts
+- **BUILD VERIFICATION** ✅ - Verified local build works with relative imports
+- **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
+- **EXPECTED RESULTS** 📋 - Relative imports should work since files definitely exist in correct locations
 
 ### 2025-01-06 - Vercel Deployment Fix Attempt #6 ✅
 - **ISSUE** ❌ - Vercel deployment failing with "Cannot find module '/vercel/path0/scripts/vercel-build.js'"

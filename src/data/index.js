@@ -1,5 +1,5 @@
 // Data module exports
-import { mockSessions } from './mockSessions.js';
+import { mockSessions } from './mockSessions';
 
 console.log('🔧 Debug - index.js loaded, mockSessions length:', mockSessions?.length || 'undefined');
 
