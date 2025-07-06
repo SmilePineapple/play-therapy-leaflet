@@ -41,6 +41,17 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 
 ## Latest Updates (Most Recent First)
 
+### 2025-01-06 - Major Project Cleanup & Deployment Fix ✅
+- **TEST-RESULTS CLEANUP** ✅ - Deleted massive test-results directory (1GB+ of test artifacts)
+- **VERCELIGNORE FIX** ✅ - Fixed .vercelignore to allow public/*.png files (logo192.png, etc.) needed for React app
+- **DEPLOYMENT ISSUE RESOLVED** ✅ - Fixed "Could not find index.html" error by updating .vercelignore pattern from `*.png` to `/*.png`
+- **DUPLICATE FILES REMOVED** ✅ - Deleted package-lock 2.json and root-level screenshot files
+- **PROJECT SIZE REDUCED** ✅ - Reduced from 2.6GB to 1.6GB (1GB reduction)
+- **BUILD VERIFICATION** ✅ - Confirmed npm run build works successfully with no errors
+- **DEPLOYMENT TRIGGERED** ✅ - Pushed changes to GitHub to trigger new Vercel deployment
+- **ROOT CAUSE** ℹ️ - .vercelignore was excluding ALL .png files, including essential React app assets in public/
+- **SOLUTION** ℹ️ - Changed pattern to exclude only root-level screenshots while preserving public/ assets
+
 ### 2025-01-06 - Cleanup: Playwright Report Directory Deleted ✅
 - **PLAYWRIGHT REPORT CLEANUP** ✅ - Deleted large playwright-report directory (~880MB)
 - **REPOSITORY SIZE REDUCED** ✅ - Removed unnecessary test artifacts and media files
