@@ -4,9 +4,12 @@
 
 // Import the parsed sessions data
 // Using JS module instead of JSON for better Vercel compatibility
-import parsedSessionsData from './parsed-sessions';
+import parsedSessionsData from './parsed-sessions.js';
 
-console.log('🔧 Debug - mockSessions.js loaded, parsedSessionsData length:', parsedSessionsData?.length || 'undefined');
+console.log('🔧 Debug - mockSessions.js loaded');
+console.log('🔧 Debug - parsedSessionsData type:', typeof parsedSessionsData);
+console.log('🔧 Debug - parsedSessionsData length:', parsedSessionsData?.length || 'undefined');
+console.log('🔧 Debug - parsedSessionsData is array:', Array.isArray(parsedSessionsData));
 
 
 // Transform parsed data to match expected format
