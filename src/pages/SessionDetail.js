@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useAccessibility } from '../contexts/AccessibilityContext';
 import { dbHelpers } from '../lib/supabase';
-import { mockSessions } from '../data/mockSessions.js';
+import { mockSessions } from './mockSessions.js';
 import Loading from '../components/Loading';
 
 const SessionDetail = () => {

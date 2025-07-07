@@ -197,7 +197,7 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes to trigger new Vercel deployment
 - **RESULT** ❌ - Build still failed with same module resolution error
 
-### 2025-01-07 - Vercel Deployment Fix Attempt #21 ✅
+### 2025-01-07 - Vercel Deployment Fix Attempt #21 ❌
 - **ISSUE** ❌ - Twentieth attempt failed with persistent module resolution error for '../data/mockSessions.js'
 - **ROOT CAUSE** ℹ️ - Import chain issues between mockSessions.js and parsed-sessions.js causing Vercel build failures
 - **ACTIONS TAKEN** 🔧 - Created self-contained mockSessions.js with inline session data (no external imports)
@@ -205,7 +205,16 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 - **INDEX UPDATE** ✨ - Updated src/data/index.js to match new export structure
 - **BUILD VERIFICATION** ✅ - Verified local build works with self-contained approach (exit code 0)
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes (commit: a4b9c5f) to trigger new Vercel deployment
-- **EXPECTED RESULTS** 📋 - Self-contained module should eliminate all import chain issues on Vercel
+- **RESULT** ❌ - Build still failed with same module resolution error
+
+### 2025-01-07 - Vercel Deployment Fix Attempt #22 🔄
+- **ISSUE** ❌ - Twenty-first attempt failed with persistent module resolution error for '../data/mockSessions.js'
+- **ROOT CAUSE** ℹ️ - Import/export mismatch: pages using default import but mockSessions.js exports both default and named exports
+- **ACTIONS TAKEN** 🔧 - Fixed import statements in Programme.js and SessionDetail.js to use named imports
+- **IMPORT FIX** ✨ - Changed from 'import mockSessions from' to 'import { mockSessions } from' to match named export
+- **BUILD VERIFICATION** ✅ - Verified local build works with corrected import syntax (exit code 0)
+- **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes (commit: afc682c) to trigger new Vercel deployment
+- **EXPECTED RESULTS** 📋 - Correct import/export matching should resolve Vercel module resolution issues
 
 ### 2025-01-06 - Vercel Deployment Fix Attempt #6 ✅
 - **ISSUE** ❌ - Vercel deployment failing with "Cannot find module '/vercel/path0/scripts/vercel-build.js'"
