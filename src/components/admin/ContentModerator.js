@@ -286,7 +286,7 @@ const ContentModerator = ({ user }) => {
     } finally {
       setLoading(false);
     }
-  }, [activeTab, loadAnnouncements, loadSessions, loadQuestions, loadSponsorAdverts]);
+  }, [activeTab]);
 
   const loadAnnouncements = useCallback(async () => {
     const { data, error: announcementsError } = await supabase

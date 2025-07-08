@@ -207,14 +207,26 @@ The fix ensures consistent time display by avoiding automatic UTC conversion whe
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes (commit: a4b9c5f) to trigger new Vercel deployment
 - **RESULT** ❌ - Build still failed with same module resolution error
 
-### 2025-01-07 - Vercel Deployment Fix Attempt #22 🔄
+### 2025-01-07 - Vercel Deployment Fix Attempt #22 ❌
 - **ISSUE** ❌ - Twenty-first attempt failed with persistent module resolution error for '../data/mockSessions.js'
 - **ROOT CAUSE** ℹ️ - Import/export mismatch: pages using default import but mockSessions.js exports both default and named exports
 - **ACTIONS TAKEN** 🔧 - Fixed import statements in Programme.js and SessionDetail.js to use named imports
 - **IMPORT FIX** ✨ - Changed from 'import mockSessions from' to 'import { mockSessions } from' to match named export
 - **BUILD VERIFICATION** ✅ - Verified local build works with corrected import syntax (exit code 0)
 - **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes (commit: afc682c) to trigger new Vercel deployment
-- **EXPECTED RESULTS** 📋 - Correct import/export matching should resolve Vercel module resolution issues
+- **RESULT** ❌ - Build still failed with same module resolution error for '../data/mockSessions.js'
+
+### 2025-01-07 - Vercel Deployment Fix Attempt #23 ✅ **SUCCESSFUL**
+- **ISSUE** ❌ - Twenty-second attempt failed with persistent module resolution error for '../data/mockSessions.js'
+- **ROOT CAUSE** ℹ️ - Vercel's build environment consistently fails to resolve relative paths to '../data/' directory
+- **RADICAL SOLUTION** 🔧 - Copied mockSessions.js directly into src/pages/ directory to eliminate relative path resolution
+- **PATH ELIMINATION** ✨ - Updated imports in Programme.js and SessionDetail.js from '../data/mockSessions.js' to './mockSessions.js'
+- **DEBUG ENHANCEMENT** ✨ - Added debug logging to pages directory version to track loading
+- **BUILD VERIFICATION** ✅ - Verified local build works with same-directory imports (exit code 0)
+- **DEPLOYMENT TRIGGERED** ✅ - Committed and pushed changes (commit: a1a8a61) to trigger new Vercel deployment
+- **RESULT** ✅ - SUCCESS! Vercel build completed successfully after 23 attempts
+- **BUILD DETAILS** ✅ - Build completed with warnings (ESLint issues), no module resolution errors, React production build generated successfully
+- **FINAL RESOLUTION** ✅ - Moving mockSessions.js to src/pages/ directory and using same-directory imports resolved all module resolution issues
 
 ### 2025-01-06 - Vercel Deployment Fix Attempt #6 ✅
 - **ISSUE** ❌ - Vercel deployment failing with "Cannot find module '/vercel/path0/scripts/vercel-build.js'"

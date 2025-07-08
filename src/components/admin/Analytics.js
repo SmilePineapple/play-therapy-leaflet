@@ -46,7 +46,7 @@ const Analytics = ({ user: _user }) => {
   useEffect(() => {
     loadAnalytics();
     loadRealAnalytics();
-  }, [loadAnalytics, loadRealAnalytics, dateRange]);
+  }, [dateRange]);
 
   const loadRealAnalytics = async () => {
     setLoadingActions(true);
