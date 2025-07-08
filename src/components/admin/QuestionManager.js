@@ -15,7 +15,7 @@ const QuestionManager = ({ user }) => {
 
   useEffect(() => {
     loadQuestions();
-  }, [loadQuestions, filter]);
+  }, [filter]);
 
   const loadQuestions = async () => {
     try {
